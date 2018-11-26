@@ -19,4 +19,27 @@ create_table "items_orders", id: false, force: :cascade do |t|
 create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end```
+  end```  
+
+  
+### Créer un system de Login et Logout  
+--> <a href="https://www.youtube.com/watch?v=rrC37eeMNIY">ressource tuto</a>  
+* crea routes:
+```
+<ul>
+    <%if user_signed_in?%>
+    <li>
+        <%= link_to 'sign out', destroy_user_session_path, method: :delete%>
+    </li>
+    <%else%>
+    <li>
+        <%= link_to 'sign in', new_user_session_path%>
+    </li>
+    <li>
+         <%= link_to 'sign up', new_user_registration_path%>
+    </li>
+    <%end%>
+</ul>
+```  
+
+

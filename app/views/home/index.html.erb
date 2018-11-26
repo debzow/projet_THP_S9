@@ -1,0 +1,16 @@
+<h1>home/index </h1>
+
+<ul>
+    <%if user_signed_in?%>
+    <li>
+       <button> <%= link_to 'sign out', destroy_user_session_path, method: :delete%> </button>
+    </li>
+    <%else%>
+    <li>
+         <button><%= link_to 'sign in', new_user_session_path%> </button>
+    </li>
+    <li>
+         <button><%= link_to 'sign up', new_user_registration_path%></button>
+    </li>
+    <%end%>
+</ul>
