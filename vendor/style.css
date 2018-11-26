@@ -434,13 +434,13 @@ blockquote{
     height: 40px;
     border: 1px solid #f3f5f8;
     box-shadow: none;
-    background: #f3f5f8 url(images/srch-2.png) center right no-repeat;
+    background: #f3f5f8 url(srch-2.png) center right no-repeat;
     padding-right:35px;
     border-radius: 0;
     
 }
 .homepage-2 .side-search .search-wid, .homepage-2 .side-search .search-wid:focus {
-    background: #f3f5f8 url(images/srch-2.png) center right no-repeat;
+    background: #f3f5f8 url(srch-2.png) center right no-repeat;
 }
 .homepage-2 #cat-nav ul li span{
     background: #f1f4f7;
@@ -508,11 +508,11 @@ blockquote{
 }
 .srch-form .search-wid{
     border:1px solid #d7d7d7 ;
-    border-right:1px solid transparent:
+    border-right:1px solid transparent;
 }
 .srch-form .search-wid:focus{
     border:1px solid #d7d7d7 ;
-    border-right:1px solid transparent:
+    border-right:1px solid transparent;
 }
 .srch-form .side-search {
     border-bottom: none;
@@ -1132,7 +1132,7 @@ blockquote{
     width:16px;
     height:18px;
     display:block;
-    background: url(images/bag-white.png) no-repeat;
+    background: url(bag-white.png) no-repeat;
     margin-right:10px;
 }
 
@@ -1142,7 +1142,7 @@ blockquote{
 .content-offers{
     min-height:490px;
     width:100%;
-    background:url(images/bg-offers.jpg) no-repeat left center;
+    background:url(bg-offers.jpg) no-repeat left center;
     margin-bottom:100px;
     
 }
@@ -1333,11 +1333,11 @@ blockquote{
 
 
 .page-title{
-    background:#f9f9f9 url(images/banner-bg.jpg) top center no-repeat;
+    background:#f9f9f9 url(banner-bg.jpg) top center no-repeat;
     min-height:113px;
 }
 .page-title.type-2{
-    background:#f9f9f9 url(images/banner-bg-2.jpg) top center no-repeat;
+    background:#f9f9f9 url(banner-bg-2.jpg) top center no-repeat;
     min-height:248px;
 }
 .page-title h3{
@@ -1418,7 +1418,7 @@ blockquote{
     padding-left:15px;
 }
 .list-1 li{
-    list-style-image: url(images/list-1.png);
+    list-style-image: url(list-1.png);
     color:#6a6a6c;
     font-size:14px;
     font-weight: 500;
@@ -1828,7 +1828,7 @@ blockquote{
     padding-left:15px;
 }
 .blog-cat-list li{
-    list-style-image: url(images/list-2.png);
+    list-style-image: url(list-2.png);
     margin-bottom:25px;
 }
 .blog-cat-list li a{
@@ -3375,7 +3375,7 @@ blockquote{
 	text-decoration: none;
 }
 .sbToggle{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 	display: block;
 	height: 33px;
 	outline: none;
@@ -3386,13 +3386,13 @@ blockquote{
     border-left: solid 2px #414141;
 }
 .sbToggle:hover{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 .sbToggleOpen{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 .sbToggleOpen:hover{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 .sbHolderDisabled{
 	background-color: #3C3C3C;
@@ -3488,7 +3488,7 @@ blockquote{
     font-size: 13px;
 }
 #short .sbToggle{
-	background: #fcfcfc url(images/down.png)no-repeat center center;
+	background: #fcfcfc url(down.png)no-repeat center center;
 	display: block;
 	height: 36px;
 	outline: none;
@@ -3499,13 +3499,13 @@ blockquote{
     border-left: solid 2px #ededed;
 }
 #short .sbToggle:hover{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 #short .sbToggleOpen{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 #short .sbToggleOpen:hover{
-	background: url(images/down.png)no-repeat center center;
+	background: url(down.png)no-repeat center center;
 }
 #short .sbHolderDisabled{
 	background-color: #3C3C3C;
@@ -3789,7 +3789,7 @@ blockquote{
 	text-decoration: none;
 }
 .country .sbToggle{
-	background: #f5f5f5 url(images/down-drk.png)no-repeat center center;
+	background: #f5f5f5 url(down-drk.png)no-repeat center center;
 	display: block;
 	height: 41px;
 	outline: none;
@@ -4141,7 +4141,7 @@ blockquote{
     width: 16px;
     height: 18px;
     display: block;
-    background: url(images/bag-white.png) no-repeat !important;
+    background: url(bag-white.png) no-repeat !important;
     margin-right: 10px;
     float:left;
 }

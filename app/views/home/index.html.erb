@@ -45,7 +45,9 @@
                                           <span class="icon-bar"></span>
                                           <span class="icon-bar"></span>
                                       </button>
-                                      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                                      <a class="navbar-brand" href="index.html">
+                                        <%= image_tag('logo.png', alt: "") %>
+                                      </a>
                                   </div>
 
                                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,10 +62,16 @@
                                      
                                       <ul class="nav navbar-nav navbar-right">
                                           <li class="menu-search-form">
-                                              <a href="#" id="open-srch-form"><img src="images/srch.png" alt="srch"></a>
+                                              <a href="#" id="open-srch-form">
+                                                <%= image_tag('srch.png', alt: "srch") %>
+                                            </a>
                                           </li>
-                                          <li><a href="#"><img src="../images/pav.png" alt="pav"><span>2</span></a></li>
-                                          <li><a href="#"><img src="images/bag.png" alt="bag"><span>2</span></a></li>
+                                          <li><a href="#">
+                                            <%= image_tag('pav.png', alt: "pav") %>
+                                            <span>2</span></a></li>
+                                          <li><a href="#">
+                                            <%= image_tag('bag.png', alt: "bag") %>
+                                            <span>2</span></a></li>
                                           <li id="open-srch-form-mod">
                                               <div>
                                                   <form class="side-search">
@@ -174,14 +182,20 @@
                                                               <div class="product-fade-wrap">
                                                                   <div id="product-image10" class="owl-carousel owl-theme">
                                                                       <div class="item">
-                                                                        <%= image_tag('p-9.jpg', class: "img-responsive", alt: "shoes") %>
+                                                                        <%= image_tag('p-9.jpg', class: "img-responsive", alt: "") %>
                                                                       </div>
                                                                       <div class="item">
-                                                                        <%= image_tag('p-3.jpg', class: "img-responsive", alt: "shoes") %>
+                                                                        <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
                                                                       </div>
-                                                                      <div class="item"><img href="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-2.jpg" alt="" class="img-responsive"></div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
                                                                   </div>
                                                                   <div class="product-fade-ct">
                                                                       <div class="product-fade-control">
@@ -207,7 +221,6 @@
                                                           <div class="product-name">
                                                               Striped Men's Round Neck T-Shirt
                                                           </div>
-                                                          <div class="star-1"></div>
                                                           <div class="product-price">
                                                               <span>$19.00</span> $15.00
                                                           </div>
@@ -216,11 +229,21 @@
                                                           <div class="product-fade">
                                                               <div class="product-fade-wrap">
                                                                   <div id="product-image11" class="owl-carousel owl-theme">
-                                                                      <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                                      <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
+                                                                      <div class="item">
+                                                                        <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                                    </div>
                                                                   </div>
                                                                   <div class="product-fade-ct">
                                                                       <div class="product-fade-control">
@@ -246,7 +269,6 @@
                                                           <div class="product-name">
                                                               Striped Men's Round Neck T-Shirt
                                                           </div>
-                                                          <div class="star-1"></div>
                                                           <div class="product-price">
                                                               <span>$19.00</span> $15.00
                                                           </div>
@@ -254,7 +276,9 @@
                                                   </div>
                                               </div>
                                               <div class="mega-offers">
-                                                  <a href=""><img src="images/mega-offers.jpg" class="img-responsive" alt=""></a>
+                                                  <a href="">
+                                                    <%= image_tag('mega-offers.jpg', class: "img-responsive", alt: "") %>
+                                                </a>
                                               </div>
                                               <div class="clearfix"></div>
                                           </div>
@@ -267,7 +291,9 @@
                               <li><a href="contact.html">HOME & KITCHEN </a></li>
                               <li><a href="contact.html">MORE STORES </a></li>
                               <li><a href="contact.html">OFFERS ZONE </a></li>
-                              <li class="cat-img-off"><img src="images/offers.png" alt="off"></li>
+                              <li class="cat-img-off">
+                                <%= image_tag('offers.png', class: "img-responsive", alt: "off") %>
+                            </li>
                           </ul>
                            
                       </div><!-- /.navbar-collapse -->
@@ -280,7 +306,7 @@
           <div id="main-slider"> <!-- Slider -->
               <div id="home-slider" class="owl-carousel owl-theme">
                   <div class="item">
-                      <img src="images/slider-1.jpg" alt="slide-1" class="img-responsive">
+                    <%= image_tag('slider-1.jpg', class: "img-responsive", alt: "slide-1") %>
                       <div class="slider-desc">
                           <div class="container">
                               <div class="row">
@@ -303,7 +329,7 @@
                       </div>
                   </div>
                   <div class="item">
-                      <img src="images/slider-2.jpg" alt="slide-2" class="img-responsive">
+                    <%= image_tag('slider-2.jpg', class: "img-responsive", alt: "slide-2") %>
                       <div class="slider-desc">
                           <div class="container">
                               <div class="row">
@@ -323,50 +349,7 @@
                   </div>
               </div>
           </div> <!-- Slider -->
-          
-          <div id="content"> <!-- Content -->
-              <div class="container">
-                  <div class="home-content">
-                      <div class="cat-offers">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <div class="cat-sec-1">
-                                      <img src="images/cat-1.jpg" class="img-responsive" alt="">
-                                      <div class="cat-desc">
-                                          <div class="cat-inner">
-                                              <div class="cat-title">man<span>Clothing</span></div>
-                                              <a href="" class="btn btn-border">Buy Now</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="cat-sec-2">
-                                      <img src="images/cat-2.jpg" class="img-responsive" alt="">
-                                       <div class="cat-desc">
-                                           <div class="cat-inner">
-                                              <div class="cat-title">woman<span>Clothing</span></div>
-                                              <a href="" class="btn btn-border">Buy Now</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="cat-sec-3">
-                                      <img src="images/cat-3.jpg" class="img-responsive" alt="">
-                                       <div class="cat-desc">
-                                           <div class="cat-inner">
-                                              <div class="cat-title">accessories<span>collections - 2014</span></div>
-                                              <a href="" class="btn btn-border">shop Now</a>
-                                           </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
+                       
               <div class="newest">
                   <div class="container">
                       <div class="newest-content">
@@ -387,20 +370,26 @@
                               <div id="myTabContent" class="tab-content">
                                   <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
                                       <div class="row clearfix">
+
                                           <div class="col-md-3 prdct-grid">
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image" class="owl-carousel owl-theme">
                                                             <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "shoes") %>
+                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
                                                             </div>
                                                             <div class="item">
-                                                                
-                                                                <img src="images/p-2.jpg" alt="" class="img-responsive">
+                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
                                                             </div>
-                                                            <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -428,20 +417,30 @@
                                               <div class="product-name">
                                                   <a href="">Adidas Striped Men's Round Neck T-Shirt</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
                                           </div>
+
                                           <div class="col-md-3 prdct-grid">
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image2" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-2.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -469,20 +468,30 @@
                                               <div class="product-name">
                                                   <a href="">Women's Jeans</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
-                                          </div>
+                                              </div>
+
                                           <div class="col-md-3 prdct-grid">
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image3" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-2.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -510,8 +519,7 @@
                                               <div class="product-name">
                                                   <a href="">Running Shoes</a>
                                               </div>
-                                              <div class="star-1"></div>
-                                              <div class="product-price">
+                                             <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
                                           </div>
@@ -519,11 +527,21 @@
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image4" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-2.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "")%>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -551,7 +569,6 @@
                                               <div class="product-name">
                                                   <a href="">men's Jeans</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
@@ -562,11 +579,21 @@
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image5" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-1.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-2.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-3.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-4.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -594,7 +621,6 @@
                                               <div class="product-name">
                                                   <a href="">Striped Men's Round Neck T-Shirt</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
@@ -603,10 +629,18 @@
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image6" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-6.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-7.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-8.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -634,7 +668,6 @@
                                               <div class="product-name">
                                                   <a href="">Women's Round Neck T-Shirt</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
@@ -643,10 +676,18 @@
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image7" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-7.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-8.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-6.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -674,7 +715,6 @@
                                               <div class="product-name">
                                                   <a href="">men's Jeans</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
@@ -683,10 +723,22 @@
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
                                                         <div id="product-image8" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="images/p-8.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-5.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-6.jpg" alt="" class="img-responsive"></div>
-                                                            <div class="item"><img src="images/p-7.jpg" alt="" class="img-responsive"></div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
+                                                                <img src="images/p-8.jpg" alt="" class="img-responsive">
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
+                                                                <img src="images/p-5.jpg" alt="" class="img-responsive">
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
+                                                                <img src="images/p-6.jpg" alt="" class="img-responsive">
+                                                            </div>
+                                                            <div class="item">
+                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
+                                                                <img src="images/p-7.jpg" alt="" class="img-responsive">
+                                                            </div>
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -714,7 +766,6 @@
                                               <div class="product-name">
                                                   <a href="">Heels</a>
                                               </div>
-                                              <div class="star-1"></div>
                                               <div class="product-price">
                                                   <span>$19.00</span> $15.00
                                               </div>
@@ -766,34 +817,34 @@
                           <div id="slider-home"> <!-- Slider -->
                               <div id="brand-carousel" class="owl-carousel owl-theme">
                                   <div class="item">
-                                      <img src="images/brand-2.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-2.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-3.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-3.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-4.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-4.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-1.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-1.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-5.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-5.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-2.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-2.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-3.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-3.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-4.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-4.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-1.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-1.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                                   <div class="item">
-                                      <img src="images/brand-5.png" alt="slide-1" class="img-responsive">
+                                        <%= image_tag('brand-5.png', class: "img-responsive", alt: "slide-1") %>
                                   </div>
                               </div>
                           </div> <!-- Slider -->
@@ -811,21 +862,27 @@
                           </div>
                           <div class="row">
                               <div class="col-md-4 blog-ct">
-                                  <a href=""><img src="images/rec-1.jpg" alt="" class="img-responsive"></a>
+                                  <a href="">
+                                        <%= image_tag('rec-1.jpg', class: "img-responsive", alt: "") %>
+                                </a>
                                   <div class="blog-ct-title">
                                       <a href="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque !</a>
                                       <span>May 11,2014</span>
                                   </div>
                               </div>
                               <div class="col-md-4 blog-ct">
-                                  <a href=""><img src="images/rec-2.jpg" alt="" class="img-responsive"></a>
+                                  <a href="">
+                                        <%= image_tag('rec-2.jpg', class: "img-responsive", alt: "") %>
+                                </a>
                                   <div class="blog-ct-title">
                                       <a href="">Voluptatem accusantium doloremque</a>
                                       <span>May 11,2014</span>
                                   </div>
                               </div>
                               <div class="col-md-4 blog-ct">
-                                  <a href=""><img src="images/rec-3.jpg" alt="" class="img-responsive"></a>
+                                  <a href="">
+                                        <%= image_tag('rec-3.jpg', class: "img-responsive", alt: "") %>
+                                </a>
                                   <div class="blog-ct-title">
                                       <a href="">Voluptatem accusantium doloremque</a>
                                       <span>May 11,2014</span>
@@ -845,7 +902,7 @@
                           <div class="col-md-3">
                               <div class="text-widget">
                                   <div class="wid-title">Welcome to</div>
-                                  <img src="images/logo-white.png" alt="ft-logo">
+                                      <%= image_tag('logo-white.png', class: "img-responsive", alt: "ft-logo") %>
                                   <p>
                                       Believe isCommerce WordPress theme. It has<br/>everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
                                   </p>

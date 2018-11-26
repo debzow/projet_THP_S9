@@ -10,11 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= lib/assets/css/animate
- *= lib/assets/css/bootstrap
- *= lib/assets/css/settings-ver.5.3.1
- *= lib/assets/css/theme
+ *= require font-awesome
+ *= require bootstrap.min 
+ *= require style
+ *= require responsive
+ *= require owl.carousel
+ *= require owl.theme
+ *= require owl.transitions
+ *= require prettyPhoto
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+
