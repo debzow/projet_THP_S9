@@ -5,4 +5,8 @@ class Item < ApplicationRecord
     validates :image, presence: true
 
     has_and_belongs_to_many :carts
+    
+    # un produit appartient et possede plusieurs commandes
+    has_and_belongs_to_many :orders
+
 end

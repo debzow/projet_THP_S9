@@ -4,5 +4,7 @@ class User < ApplicationRecord
   has_one :cart
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable      
+  #un user peux passer plusieurs commandes.
+  has_many :orders
 end
