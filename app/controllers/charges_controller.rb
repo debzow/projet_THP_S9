@@ -4,24 +4,24 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-  	# Amount in cents
-  	@amount = 500
+  		# Amount in cents
+	  	@amount = 500
 
- 	 customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
-  )
+	 	 customer = Stripe::Customer.create(
+	    :email => params[:stripeEmail],
+	    :source  => params[:stripeToken]
+	  	)
 
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Cats pictures',
-    :currency    => 'usd'
-  )
+	  	charge = Stripe::Charge.create(
+	    :customer    => customer.id,
+	    :amount      => @amount,
+	    :description => 'Cats pictures',
+	    :currency    => 'usd'
+	  	)
 
-	rescue Stripe::CardError => e
- 	flash[:error] = e.message
-  	redirect_to :root
-	end
+		rescue Stripe::CardError => e
+	 	flash[:error] = e.message
+	  	redirect_to :root
+		end
 
 end
