@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require library
+//= require bootstrap.min
+//= require owl.carousel.min
+//= require jquery.raty
+//= require ui
+//= require jquery.prettyPhoto
+//= require jquery.selectbox-0.2
+//= require theme-script
