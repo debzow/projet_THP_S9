@@ -369,27 +369,20 @@
                               
                               <div id="myTabContent" class="tab-content">
                                   <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
-                                      <div class="row clearfix">
 
+                                      <div class="row clearfix">
+                                          <% @items.each do |element| %>
                                           <div class="col-md-3 prdct-grid">
                                               <div class="product-fade">
                                                     <div class="product-fade-wrap">
-                                                        <div id="product-image" class="owl-carousel owl-theme">
+                                                        <div id="product-image">
+                                                          
                                                             <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
+
+                                                                <%= image_tag(element.image, class: "img-responsive", alt: "") %>
+
                                                             </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
+                                                       
                                                         </div>
                                                         <div class="product-fade-ct">
                                                             <div class="product-fade-control">
@@ -398,14 +391,14 @@
                                                                     <a href=""><i class="fa fa-retweet"></i></a>
                                                                     <a href=""><i class="fa fa-search"></i></a>
                                                                 </div>
-                                                                <div class="to-right">
+                                                            <!--     <div class="to-right">
                                                                     <div id="product-control" class="owl-carousel owl-theme clearfix">
                                                                         <div class="item"><div class="bullets"></div></div>
                                                                         <div class="item"><div class="bullets"></div></div>
                                                                         <div class="item"><div class="bullets"></div></div>
                                                                         <div class="item"><div class="bullets"></div></div>
                                                                     </div>
-                                                                </div>
+                                                                </div> -->
                                                                 <div class="clearfix"></div>
                                                                 <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
                                                             </div>
@@ -415,363 +408,16 @@
                                               </div>
                                               
                                               <div class="product-name">
-                                                  <a href="">Adidas Striped Men's Round Neck T-Shirt</a>
+                                                  <%= link_to element.title, home_path(element.id)  %>
                                               </div>
                                               <div class="product-price">
-                                                  <span>$19.00</span> $15.00
+                                                  <span><%= element.price %></span><%= element.price %>
                                               </div>
                                           </div>
-
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image2" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control2" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">Women's Jeans</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                              </div>
-
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image3" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control3" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">Running Shoes</a>
-                                              </div>
-                                             <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image4" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "")%>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control4" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">men's Jeans</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
-                                          
-                                          <div class="clearfix"></div>
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image5" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-1.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-2.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-3.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-4.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control5" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">Striped Men's Round Neck T-Shirt</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image6" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control6" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">Women's Round Neck T-Shirt</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image7" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control7" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">men's Jeans</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3 prdct-grid">
-                                              <div class="product-fade">
-                                                    <div class="product-fade-wrap">
-                                                        <div id="product-image8" class="owl-carousel owl-theme">
-                                                            <div class="item">
-                                                                <%= image_tag('p-8.jpg', class: "img-responsive", alt: "") %>
-                                                                <img src="images/p-8.jpg" alt="" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-5.jpg', class: "img-responsive", alt: "") %>
-                                                                <img src="images/p-5.jpg" alt="" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-6.jpg', class: "img-responsive", alt: "") %>
-                                                                <img src="images/p-6.jpg" alt="" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <%= image_tag('p-7.jpg', class: "img-responsive", alt: "") %>
-                                                                <img src="images/p-7.jpg" alt="" class="img-responsive">
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-fade-ct">
-                                                            <div class="product-fade-control">
-                                                                <div class="to-left">
-                                                                    <a href=""><i class="fa fa-heart"></i></a>
-                                                                    <a href=""><i class="fa fa-retweet"></i></a>
-                                                                    <a href=""><i class="fa fa-search"></i></a>
-                                                                </div>
-                                                                <div class="to-right">
-                                                                    <div id="product-control8" class="owl-carousel owl-theme">
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        <div class="item"><div class="bullets"></div></div>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-                                                                <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                              <div class="product-name">
-                                                  <a href="">Heels</a>
-                                              </div>
-                                              <div class="product-price">
-                                                  <span>$19.00</span> $15.00
-                                              </div>
-                                          </div>
+                                          <% end %>
 
                                       </div>
+                                      
                                   </div>
                                   
                                   <div role="tabpanel" class="tab-pane fade" id="2" aria-labelledby="cat-2">

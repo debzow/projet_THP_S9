@@ -12,9 +12,10 @@ Cart.destroy_all
 User.destroy_all
 Item.destroy_all
 
-i = 0
-20.times do 
-    Item.create(title: "titre #{i}", description: "ceci est une description du produit n°#{i}", price: i, image: "ceci est l'image du produit n°#{i}")
+
+i = 1
+	8.times do 
+    Item.create(title: "titre #{i}", description: "ceci est une description du produit n°#{i}", price: i, image: "p-#{i}.jpg")
     i += 1
 end
 
