@@ -44,8 +44,9 @@ h2 {
 }
 
 #bgShow {
+	background-size: cover;
+	background-image: url(ocean.jpg);
 	
-	background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
 }
 
 #cardProduct {
