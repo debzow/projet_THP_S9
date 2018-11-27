@@ -24,8 +24,30 @@ class CartsController < ApplicationController
 
   #remove item from the cart
   def remove_item
-    #params[item_id]
+    item = Item.find(params["format"])
+    #select the cart of the log-in user
+    if user_signed_in?
+      cart = current_user.cart
+      #check if the item is in the cart
+      if item.carts.find(cart.id)
+        item.carts.delete(cart)
+      end
+
+    redirect_to carts_show_path
+    end
+
   end
+
+  def remove_post_from_category
+
+    post = Post.find(params[:post][:id])
+    category = post.categories.find(params[:category][:id])
+
+    if category
+       post.categories.delete(category)
+    end
+
+ end
 
   #re-initialize cart
   def reset

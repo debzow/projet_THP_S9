@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   #Carts routes
   get 'carts/show', to:'carts#show'
-  put 'carts/create', to:'carts#create'
-  put 'carts/add_item', to:'carts#add_item'
-  put 'carts/remove_item', to:'carts#remove_item'
-  put 'carts/reset', to:'carts#reset'
+  post 'carts/create', to:'carts#create'
+  post 'carts/add_item', to:'carts#add_item'
+  post 'carts/remove_item', to:'carts#remove_item'
+  post 'carts/reset', to:'carts#reset'
 
   get'/store', to:'store#index'
   devise_for :users

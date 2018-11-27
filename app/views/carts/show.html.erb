@@ -1,6 +1,9 @@
-<h2>Cart show</h2>
+<h2>Cart of <%= current_user.email %> </h2>
+<br>
 
+<h3>Cart id : <%= @cart.id %> </h3>
 <h3>Cart value : <%= @cart_value %> </h3>
+<br>
 
 <div class="row">
   <% @cart_items.each do |item| %>
