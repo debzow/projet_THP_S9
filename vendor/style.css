@@ -1104,6 +1104,9 @@ blockquote{
 .to-left a:hover{
     background: #34b0df ;
 }
+.to-left {
+    display:none;
+}
 .product-fade-control{
     padding:10px;
     position:relative;
