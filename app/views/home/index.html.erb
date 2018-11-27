@@ -20,7 +20,15 @@
                           </div>
                       </div>
                       <div class="top-control">
-                          <a href="">Track Order</a><span>•</span><a href="">Register</a><span>•</span><a href="">Login</a>
+                        <ul>
+                            <% if user_signed_in? %>
+                                
+                            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
+                            <%= current_user.email %>
+                            <% else %>
+
+                          <a href="">Track Order</a><span>•</span><%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
+                          <% end %>
                       </div>
                       <div class="clearfix"></div>
                       <div class="top-offers show-mobile">
@@ -111,7 +119,7 @@
                               <li><a href="">BABY & KIDS <i class="fa fa-angle-down"></i></a></li>
                               <li><a href="">BOOKS & MEDIA <i class="fa fa-angle-down"></i></a></li>
                               <li><a href="">HOME & KITCHEN <i class="fa fa-angle-down"></i></a></li>
-                              <li><a href="">MORE STORES <i class="fa fa-angle-down"></i></a></li>
+                             
                               <li><a href="">OFFERS ZONE <i class="fa fa-angle-down"></i></a></li>
                               <li class="cat-img-off"><img src="images/offers.png" alt="off"></li>
                           </ul>
@@ -292,7 +300,7 @@
                               <li><a href="contact.html">MORE STORES </a></li>
                               <li><a href="contact.html">OFFERS ZONE </a></li>
                               <li class="cat-img-off">
-                                <%= image_tag('offers.png', class: "img-responsive", alt: "off") %>
+                               
                             </li>
                           </ul>
                            
