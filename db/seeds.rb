@@ -22,9 +22,13 @@ end
 5.times do 
     user = User.create(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
     cart = Cart.create(user_id: user.id)
+    order = Order.create(user_id: user.id)
     i = Item.first.id
     Item.count.times do
         cart.items << Item.find(i)
+        order.items << Item.find(i)
         i += 1
     end
+
+
 end
