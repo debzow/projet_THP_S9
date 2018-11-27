@@ -1,0 +1,29 @@
+<h2>Cart show</h2>
+
+<h3>Cart value : <%= @cart_value %> </h3>
+
+<div class="row">
+  <% @cart_items.each do |item| %>
+
+    <div class="card col-lg-3" >
+      <div class="card-body">
+        <div style="diplay: flex">
+          <h5 class="card-title"> 
+            <!-- Item id -->
+            Item id : <%= item.id %>  
+          </h5>
+        </div>
+        <!-- Item description -->
+        <p class="card-text" > <strong>item description :</strong> <%= item.description %> </p>
+        <!-- Item price -->
+        <p class="card-text" > <strong>item price :</strong> <%= item.price %> </p>
+        <!-- Item image -->
+        <!-- Change !!!! -->
+        <!-- <ruby> image_tag(item.image , :alt => "image") </ruby> -->
+        <!-- Item button -->
+        <%= link_to 'remove item from card', carts_remove_item_path(item.id), class:"btn btn-link", method: :post %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
