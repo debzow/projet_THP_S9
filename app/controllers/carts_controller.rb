@@ -11,6 +11,8 @@ class CartsController < ApplicationController
       @cart_items.each do |item|
         @cart_value += item.price
       end
+    else
+      redirect_to root_path
     end
   end
 
@@ -32,22 +34,11 @@ class CartsController < ApplicationController
       if item.carts.find(cart.id)
         item.carts.delete(cart)
       end
-
-    redirect_to carts_show_path
+      redirect_to carts_show_path
+    else
+      redirect_to root_path
     end
-
   end
-
-  def remove_post_from_category
-
-    post = Post.find(params[:post][:id])
-    category = post.categories.find(params[:category][:id])
-
-    if category
-       post.categories.delete(category)
-    end
-
- end
 
   #re-initialize cart
   def reset
