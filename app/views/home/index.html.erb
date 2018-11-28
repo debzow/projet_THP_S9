@@ -1,7 +1,8 @@
 <body>
   <div id="wrapper" class="homepage-1"> <!-- wrapper -->
     <div id="header"> <!-- header -->
-      <div class="top"> <!-- top -->
+      
+      <div class="top"> <!--------------- top ---------------->
         <div class="container">
           <ul class="top-support"> 
             <li>
@@ -29,7 +30,8 @@
               </div>
             </div>
         </div>
-      </div> <!-- top -->
+      </div> <!------------------ top -------------------->
+
       <div id="believe-nav"> <!-- Nav -->
         <div class="container">
           <div class="min-marg">
@@ -92,19 +94,20 @@
                     </div>
                   </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
             </nav>
           </div>
-          <div class="srch-form">
-            <form class="side-search">
-              <div class="input-group">
-                <input type="text" class="form-control search-wid" placeholder="Search Here" aria-describedby="basic-addon2">
-                <a href="" class="input-group-addon btn-side-serach" id="basic-addon2"></a>
-              </div>
-            </form>
-          </div>
+        </div>
+
+        <div class="srch-form">
+          <form class="side-search">
+            <div class="input-group">
+              <input type="text" class="form-control search-wid" placeholder="Search Here" aria-describedby="basic-addon2">
+              <a href="" class="input-group-addon btn-side-serach" id="basic-addon2"></a>
+            </div>
+          </form>
         </div>
       </div> <!-- Nav -->
+
       <div id="cat-nav">
         <div class="container">
           <nav class="navbar navbar-default">
@@ -243,7 +246,7 @@
                                                 <div class="item">
                                                   <div class="bullets">
                                                   </div>
-                                                /div>
+                                                </div>
                                                   <div class="item">
                                                     <div class="bullets">
                                                     </div>
@@ -377,6 +380,7 @@
                     </div>
                   </div>      
                 </div> <!-- header -->
+
                 <div id="main-slider"> <!-- Slider -->
               <div id="home-slider" class="owl-carousel owl-theme">
                   <div class="item">
@@ -459,12 +463,8 @@
                                                   <a href=""></a>
                                                 </div>
                                                 <div class="clearfix"></div>
-                                                  <a href="" class="btn btn-to-cart">
-                                                    <span class="bag"></span>
-                                                    <span>Add To cart</span>
-                                                    <div class="clearfix">
-                                                    </div>
-                                                  </a>
+                                                  <span class="bag" style=' margin-left: 40px';></span>
+                                                    <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
                                                 </div>
                                               </div>
                                             </div>
@@ -476,7 +476,7 @@
                                             <span><%= element.price %></span><%= element.price %>
                                           </div>
                                         </div>
-                                    <% end %>
+                                     <% end %>
                                   </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="2" aria-labelledby="cat-2">
@@ -594,8 +594,10 @@
               </div>
               
           </div> <!-- Content -->
+
+          <!------------------------ Footer -------------------------->
           
-          <div id="footer"><!-- Footer -->
+          <div id="footer">
               <div class="footer-widget">
                   <div class="container">
                       <div class="row">

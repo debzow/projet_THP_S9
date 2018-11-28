@@ -662,7 +662,12 @@ blockquote{
 .homepage-1 #cat-nav ul li .to-left a i{
 	margin:0;
 }
-.homepage-1 .prdct-grid{
+
+.to-left {
+    display: none;
+}
+
+.homepage-1 {
 	min-height:0;
 }
 .about-page .list-1 li{
@@ -1018,6 +1023,8 @@ blockquote{
 
 .product-fade-wrap{
 	position:relative;
+    display: flex;
+    flex-direction: row;
 }
 .product-fade-wrap:after{
 	content:"";
@@ -1120,24 +1127,20 @@ blockquote{
     font-weight: 700;
     padding:8px ;
 }
-.btn-to-cart, .btn-to-cart span{
-    float:left;
+.btn-to-cart{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 255, 0, 0.5);
 }
 .btn-to-cart:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    background: rgba(143, 22, 22, .8);
+    background: rgba(0, 255, 0, 0.8);
 }
-
-.bag{
-    width:16px;
-    height:18px;
-    display:block;
-    background: url(bag-white.png) no-repeat;
-    margin-right:10px;
-}
-
-
-
 
 .content-offers{
     min-height:490px;
