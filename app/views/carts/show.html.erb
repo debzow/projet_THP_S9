@@ -1,32 +1,63 @@
-<h2>Cart of <%= current_user.email %> </h2>
-<br>
+<div class="bgcolCart">
 
-<h3>Cart id : <%= @cart.id %> </h3>
-<h3>Cart value : <%= @cart_value %> </h3>
-<br>
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+        <h2>Cart of <%= current_user.email %> </h2>
+     </div>
+  </section>
 
-<div class="row">
-  <% @cart_items.each do |item| %>
-
-    <div class="card col-lg-3" >
-      <div class="card-body">
-        <div style="diplay: flex">
-          <h5 class="card-title"> 
-            <!-- Item id -->
-            Item id : <%= item.id %>  
-          </h5>
-        </div>
-        <!-- Item description -->
-        <p class="card-text" > <strong>item description :</strong> <%= item.description %> </p>
-        <!-- Item price -->
-        <p class="card-text" > <strong>item price :</strong> <%= item.price %> </p>
-        <!-- Item image -->
-        <!-- Change !!!! -->
-        <!-- <ruby> image_tag(item.image , :alt => "image") </ruby> -->
-        <!-- Item button -->
-        <%= link_to 'remove item from card', carts_remove_item_path(item.id), class:"btn btn-link", method: :post %>
+  <div class="container mb-4">
+      <div class="row">
+          <div class="col-12">
+              <div class="table-responsive" id="tableCart">
+                  <table class="table table-striped" >
+                      <thead>
+                          <tr>
+                              <th scope="col"> </th>
+                              <th scope="col">Product</th>
+                              <th scope="col">Available</th>
+                              <th scope="col" class="text-center">Quantity</th>
+                              <th scope="col" class="text-right">Price</th>
+                              <th> </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% @cart_items.each do |item| %>
+                          <tr>
+                              <td><%= image_tag('p-1.jpg', class: "img-responsive", id: item.id, alt: "") %></td>
+                              <td><%= item.title %></td>
+                              <td>In stock</td>
+                              <td><input class="form-control" type="text" value="1" /></td>
+                              <td class="text-right"><%= item.price %> €</td>
+                              <td class="text-right"><%= link_to 'Supprimer', carts_remove_item_path(item.id), class:"btn btn-link", id:"btnSupp", method: :post %></td>
+                          </tr>
+                          <% end %>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td><strong>Total</strong></td>
+                              <td class="text-right"><strong><%= @cart_value %> €</strong></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <br><br>
+          <div class="col mb-2">
+              <div class="row">
+                  <div class="col-sm-12  col-md-6">
+                      <%= link_to 'Continuer shopping', :root, class:"btn btn-link", id:"btnBack" %>
+                  </div>
+                  <div class="col-sm-12 col-md-6 text-right">
+                      <%= link_to 'Paiement', store_path, class:"btn btn-link", id:"btnPayment" %>
+                  </div>
+                  <br><br><br>
+              </div>
+          </div>
       </div>
-    </div>
+  </div>
 
-  <% end %>
 </div>
