@@ -26,6 +26,7 @@ class CartsController < ApplicationController
 
   #remove item from the cart
   def remove_item
+    #select item to remove from the cart
     item = Item.find(params["format"])
     #select the cart of the log-in user
     if user_signed_in?
@@ -42,5 +43,19 @@ class CartsController < ApplicationController
 
   #re-initialize cart
   def reset
+    if user_signed_in?
+      cart = current_user.cart
+      #remove all items from the cart
+      cart.items.each do |item|
+        #check if the item is in the cart
+        if item.carts.find(cart.id)
+          item.carts.delete(cart)
+        end
+      end
+      redirect_to carts_show_path
+    else
+      redirect_to root_path
+    end
   end
+
 end

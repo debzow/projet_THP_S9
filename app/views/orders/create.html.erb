@@ -1,0 +1,29 @@
+<h1>Order success !</h1>
+
+<h3>Order id : <%= @order.id %> </h3>
+<h3>Order value : <%= @order_value %> </h3>
+<br>
+
+<div class="row">
+  <% @order.items.each do |item| %>
+
+    <div class="card col-lg-3" >
+      <div class="card-body">
+        <div style="diplay: flex">
+          <h5 class="card-title"> 
+            <!-- Item id -->
+            Item id : <%= item.id %>  
+          </h5>
+        </div>
+        <!-- Item description -->
+        <p class="card-text" > <strong>item description :</strong> <%= item.description %> </p>
+        <!-- Item price -->
+        <p class="card-text" > <strong>item price :</strong> <%= item.price %> </p>
+        <!-- Item image -->
+        <!-- Change !!!! -->
+        <!-- <ruby> image_tag(item.image , :alt => "image") </ruby> -->
+      </div>
+    </div>
+
+  <% end %>
+</div>
