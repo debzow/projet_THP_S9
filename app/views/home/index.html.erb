@@ -19,7 +19,12 @@
             </div>
           </div>
           <div class="top-control">
-            <a href="">Track Order</a><span>•</span><a href="">Register</a><span>•</span><a href="">Login</a>
+            <% if user_signed_in? %>
+              <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
+              <%= current_user.email %>
+            <% else %>
+              <%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
+            <% end %>
           </div>
           <div class="clearfix">
           </div>
@@ -452,7 +457,7 @@
                                           <div class="product-fade-wrap">
                                             <div id="product-image">
                                               <div class="item">
-                                                <%= image_tag(element.image, class: "img-responsive", alt: "") %>
+                                                <%= image_tag(element.image, class: "img-responsive", id: element.id, alt: "") %>
                                               </div>
                                             </div>
                                             <div class="product-fade-ct">
@@ -604,29 +609,12 @@
                           <div class="col-md-3">
                               <div class="text-widget">
                                   <div class="wid-title">Welcome to</div>
-                                    <%= image_tag('logo-white.png', class: "img-responsive", alt: "ft-logo") %>
-                                    <p>Believe isCommerce WordPress theme. It has<br/>everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
-                                    </p>
-                                    <ul class="ft-soc clearfix">
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                    </ul>
-                                  <div class="clearfix">
-                                  </div>
-                                </div>
+                                      <%= image_tag('logo-white.png', class: "img-responsive", alt: "ft-logo") %>
+                                  <p>
+                                      Believe isCommerce WordPress theme. It has<br/>everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
+                                  </p>
+                                  
+                                  <div class="clearfix"></div>
                               </div>
                               <div class="col-md-2">
                                 <div class="quick-links">
