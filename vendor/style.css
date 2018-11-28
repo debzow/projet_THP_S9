@@ -662,7 +662,12 @@ blockquote{
 .homepage-1 #cat-nav ul li .to-left a i{
 	margin:0;
 }
-.homepage-1 .prdct-grid{
+
+.to-left {
+    display: none;
+}
+
+.homepage-1 {
 	min-height:0;
 }
 .about-page .list-1 li{
@@ -1018,6 +1023,8 @@ blockquote{
 
 .product-fade-wrap{
 	position:relative;
+    display: flex;
+    flex-direction: row;
 }
 .product-fade-wrap:after{
 	content:"";
@@ -1123,24 +1130,20 @@ blockquote{
     font-weight: 700;
     padding:8px ;
 }
-.btn-to-cart, .btn-to-cart span{
-    float:left;
+.btn-to-cart{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 255, 0, 0.5);
 }
 .btn-to-cart:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    background: rgba(143, 22, 22, .8);
+    background: rgba(0, 255, 0, 0.8);
 }
-
-.bag{
-    width:16px;
-    height:18px;
-    display:block;
-    background: url(bag-white.png) no-repeat;
-    margin-right:10px;
-}
-
-
-
 
 .content-offers{
     min-height:490px;
@@ -2837,10 +2840,7 @@ blockquote{
     -moz-transition: all .3s ease;
     -webkit-transition: all .3s ease;
 }
-.footer-text{
-    background:#27262b;
-    padding:15px 0;
-}
+
 .footer-text p{
     text-align:center;
     margin:0;
@@ -4275,4 +4275,122 @@ box-shadow: 1px -3px 9px 0px rgba(0,0,0,0.65);
     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
     height:110vh;
     width: 100%;
+}
+
+/* Code css template panier */
+
+.bgcolCart {
+
+    height:100vh;
+    width: 100%;
+    margin-bottom: 30%;
+}
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+#btnSupp {
+    border: 1px;
+    border-radius: 6px;
+    background-color: #ff3300;
+    -webkit-box-shadow: -1px 6px 9px 0px #000000; 
+    box-shadow: -1px 6px 9px 0px #000000;
+    text-decoration: none;
+    color: white;
+}
+#btnSupp:hover {
+    -webkit-box-shadow: -1px 6px 9px 2px #000000; 
+    box-shadow: -1px 6px 9px 2px #000000;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#btnPayment {
+    border: 1px;
+    border-radius: 6px;
+    background-color: #33cc33;
+    -webkit-box-shadow: -1px 6px 9px 0px #000000; 
+    box-shadow: -1px 6px 9px 0px #000000;
+    text-decoration: none;
+    color: white;
+    width: 550px;
+}
+#btnPayment:hover {
+    -webkit-box-shadow: -1px 6px 9px 2px #000000; 
+    box-shadow: -1px 6px 9px 2px #000000;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#btnBack {
+    border: 1px;
+    border-radius: 6px;
+    background-color: #e0e0d1;
+    -webkit-box-shadow: -1px 6px 9px 0px #000000; 
+    box-shadow: -1px 6px 9px 0px #000000;
+    text-decoration: none;
+    color: #0088cc;
+    width: 550px;
+}
+#btnBack:hover {
+    -webkit-box-shadow: -1px 6px 9px 2px #000000; 
+    box-shadow: -1px 6px 9px 2px #000000;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#tableCart {
+    -webkit-box-shadow: -1px 6px 9px 0px #000000; 
+    box-shadow: -1px 6px 9px 0px #000000;
 }
