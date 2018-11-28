@@ -14,7 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
 //= require library
 //= require bootstrap.min
 //= require owl.carousel.min
