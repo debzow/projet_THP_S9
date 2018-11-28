@@ -1,0 +1,46 @@
+
+   
+
+
+
+<div class="bgcol">
+<div class="container">
+        <div class="login-form">
+          <div class="main-div">
+             <div class="panel">
+                 <h2>Se créer un compte</h2>
+                 <p>Veuillez entrer un email et un mot de passe</p>
+             </div>
+
+             <%= form_for(resource, as: resource_name,id:"Login", url: registration_path(resource_name)) do |f| %>
+             <%= devise_error_messages! %>
+
+
+              <div class="form-group">
+
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email Address", class:"form-control", id:"inputEmail"%>
+              </div>
+
+              <div class="form-group">
+                  <% if @minimum_password_length %>
+                  
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "new-password",class:"form-control", id:"inputPassword",placeholder:"Password" %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+              </div>
+
+
+              <div class="form-group">
+                  
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control", id:"inputPassword",placeholder:"Password confirmation" %>
+              </div>
+                  <%= f.submit "S'enregistrer", class:"btn btn-success" %>
+              <% end %>
+              <%= render "devise/shared/links" %>
+             
+
+          </div>
+        <p class="botto-text"> Designed by Love </p>
+      </div>
+  </div>
+</div>
