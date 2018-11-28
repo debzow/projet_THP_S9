@@ -459,16 +459,18 @@
                                                   <a href=""></a>
                                                 </div>
                                                 <div class="clearfix"></div>
-                                                  <a href="" class="btn btn-to-cart">
-                                                    <span class="bag"></span>
-                                                    <span>Add To cart</span>
-                                                    <div class="clearfix">
+                                                 <span class="bag" style=' margin-left: 40px';></span>
+                                                     <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
+                                              </div>
+                                            </div>
+
                                                     </div>
                                                   </a>
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
+
                                           <div class="product-name">
                                             <%= link_to element.title, home_path(element.id)  %>
                                           </div>
@@ -602,29 +604,13 @@
                           <div class="col-md-3">
                               <div class="text-widget">
                                   <div class="wid-title">Welcome to</div>
-                                    <%= image_tag('logo-white.png', class: "img-responsive", alt: "ft-logo") %>
-                                    <p>Believe isCommerce WordPress theme. It has<br/>everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
-                                    </p>
-                                    <ul class="ft-soc clearfix">
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                      <li>
-                                        <a href=""></a>
-                                      </li>
-                                    </ul>
-                                  <div class="clearfix">
-                                  </div>
-                                </div>
+
+                                      <%= image_tag('logo-white.png', class: "img-responsive", alt: "ft-logo") %>
+                                  <p>
+                                      Believe isCommerce WordPress theme. It has<br/>everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
+                                  </p>
+                                  
+                                  <div class="clearfix"></div>
                               </div>
                               <div class="col-md-2">
                                 <div class="quick-links">
