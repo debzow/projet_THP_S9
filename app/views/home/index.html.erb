@@ -78,15 +78,18 @@
                       <%= image_tag('srch.png', alt: "srch") %>
                     </a>
                   </li>
-                  <li>
+                  <li>                  
                     <a href="#">
                       <%= image_tag('pav.png', alt: "pav") %>
                     <span>2</span></a>
                   </li>
                   <li>
-                    <a href="#">
-                      <%= image_tag('bag.png', alt: "bag") %>
-                    <span>2</span></a>
+                    <!-- Display cart image and items number in cart (only if user signed_in) -->
+                    <% if user_signed_in? %>
+                      <a href="<%= carts_show_path %>" >
+                        <%= image_tag('bag.png', alt: "bag") %>
+                      <span> <%= current_user.cart.items.count %> </span></a>
+                    <% end %>
                   </li>
                   <li id="open-srch-form-mod">
                     <div>
