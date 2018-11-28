@@ -88,7 +88,7 @@
                     <% if user_signed_in? %>
                       <a href="<%= carts_show_path %>" >
                         <%= image_tag('bag.png', alt: "bag") %>
-                      <span> <%= current_user.cart.items.count %> </span></a>
+                      <span id="cart_items_number"> <%= current_user.cart.items.count %> </span></a>
                     <% end %>
                   </li>
                   <li id="open-srch-form-mod">
@@ -472,7 +472,7 @@
                                                 </div>
                                                 <div class="clearfix"></div>
                                                   <span class="bag" style=' margin-left: 40px';></span>
-                                                    <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
+                                                    <%=link_to 'Add To car',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
                                                 </div>
                                               </div>
                                             </div>

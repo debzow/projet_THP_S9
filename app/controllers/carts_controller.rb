@@ -20,8 +20,28 @@ class CartsController < ApplicationController
   end
 
   #add item to the cart
-  def add_item
+  def add_item  
     #params[item_id]
+    if user_signed_in?
+      cart = current_user.cart
+      item = Item.find(params["item_id"])
+      @item_id = item.id
+      if cart.items << item
+        @items_number = cart.items.count
+        puts "#"*20
+        puts @item_id 
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.js
+          #Display an SUCCESS mesage      
+          #flash[:notice] = "Item succesfuly added"
+        end
+      else
+        #Display an ERR message
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   #remove item from the cart
