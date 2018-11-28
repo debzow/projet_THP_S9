@@ -20,3 +20,16 @@ create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end```
+
+
+### ADMIN status:  
+--> rajout d'une colone admin dans table 'users' (valeur par defaut = false)  
+--> A la création d'un nouveau User , le model definit un validate sur présence d'une valeur pour le champs admin.  
+--> l'instruction pour changer la valeur admin en 'true':  
+```
+variable_name = User.methode_pour_cibler_user
+variable_name.update(admin: true)
+```  
+--> Ajouter cette condition dans une view ?  
+
+
