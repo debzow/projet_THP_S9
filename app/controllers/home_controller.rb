@@ -8,6 +8,11 @@ class HomeController < ApplicationController
   end
 
   def profile
-  	@order = current_user.orders
+  	@orders = current_user.orders
   end
+
+  def user_orders
+  	@orders = current_user.orders
+  end
+
 end
