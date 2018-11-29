@@ -3,12 +3,16 @@
 <!--------------------------------- NAVBAR -------------------------------->
     <nav> 
       <div class="top"> <!--------------- top ---------------->
+        <div class="user-connected">
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+          <% end %>
+        </div>
         <div class="top-control">
           <% if user_signed_in? %>
             <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
-            <%= current_user.email %>
           <% else %>
-            <%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
+            <%= link_to 'Se créer un compte', new_user_registration_path %><span>•••</span><%= link_to 'Se connecter', new_user_session_path %>
           <% end %>
         </div>
         <div class="clearfix">
@@ -21,18 +25,21 @@
           <div class="min-marg">
             <nav class="navbar navbar-default">
               <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">
-                  <%= image_tag('logo.png', alt: "") %>
+                <a class="navbar-brand">
+                  <%= image_tag('logofish1.png', class: "fishlogo", alt: "") %>
                 </a>
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li class="active">
-                      <%= link_to 'Acceuil', root_path %>
+                      <%= link_to 'Acceuil', root_path, class: "acceuil" %>
+                  </li>
+                  <li class="active">
+                      <%= link_to 'Le pire enemie du poisson...', "http://pussycat-shop-bg.herokuapp.com/", class: "acceuil", :target => "_blank" %>
                   </li>
                   <li>
                     <% if user_signed_in? %>
-                      <%= link_to 'Mon profil', new_user_registration_path %>
+                      <%= link_to 'Mon profil', new_user_registration_path, class: "profile" %>
                     <% end %>
                   </li>
                 </ul>
@@ -52,40 +59,52 @@
     </nav> 
 <!--------------------------------- END NAVBAR ------------------------------------->
 <!--------------------------------- Slider ----------------------------------------->
-    <div id="main-slider">
-      <div id="home-slider" class="owl-carousel owl-theme">
-        <div class="item">
-          <%= image_tag('slider-1.jpg', class: "img-responsive", alt: "slide-1") %>
-            <div class="slider-desc">
-              <div class="container">
-                <div class="row">
-                <!--   section slider a personnaliser si on veux garder.
-                  <div class="col-md-6">
-                    <div class="slide-offers-left">
-                      <div class="slide-offers-title"><span>Men’s</span><br/>FASHION</div>
-                        <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                        <a href="" class="btn btn-blue">Shop now</a>
+    <div id="main-slider"> 
+              <div id="home-slider" class="owl-carousel owl-theme">
+                  <div class="item">
+                    <%= image_tag('slider-1.jpg', class: "img-responsive", alt: "slide-1") %>
+                      <div class="slider-desc">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="slide-offers-left">
+                                          <div class="slide-offers-title"><span>Men’s</span><br/>FASHION</div>
+                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
+                                          <a href="" class="btn btn-blue">Shop now</a>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                       <div class="slide-offers-right">
+                                          <div class="slide-offers-title"><span>Women’s</span><br/>FASHION</div>
+                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
+                                          <a href="" class="btn btn-magenta">Shop now</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="slide-offers-right">
-                        <div class="slide-offers-title"><span>Women’s</span><br/>FASHION</div>
-                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                          <a href="" class="btn btn-magenta">Shop now</a>
-                        </div>
+                  </div>
+                  <div class="item">
+                    <%= image_tag('slider-2.jpg', class: "img-responsive", alt: "slide-2") %>
+                      <div class="slider-desc">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="slide-offers-left">
+                                          <div class="slide-offers-title"><span>50% Price cut</span><br/>for online order</div>
+                                            <p>New & Fvhresh collection<br/>arraival in believe store</p>
+                                            <a href="" class="btn btn-blue">Shop now</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                    </div>
-                  </div> -->
-                </div>
+                  </div>
               </div>
-            </div>
-        </div>
-        <div class="item">
-          <%= image_tag('slider-2.jpg', class: "img-responsive", alt: "slide-2") %>
-        </div>
-      </div>
-    </div>
+    </div>    
 <!--------------------------------- End-Slider ----------------------------------------->
+
     <div class="newest">
       <div class="container">
         <div class="newest-content">
@@ -126,7 +145,7 @@
                       <%= link_to element.title, home_path(element.id)  %>
                     </div>
                     <div class="product-price">
-                      <span>25</span> - <%= element.price %>
+                      <span>25</span> - <%= sprintf('%.2f', element.price.to_i) %>
                     </div>
                   </div>
                 <% end %>
@@ -153,7 +172,7 @@
         <div class="footer-text">
           <div class="container">
             <p>Designed and Developed by <a href="">Montprellier Team </a> from The Hacking Project</p>
-         </div>
+          </div>
         </div>
       </div>
     </div>
