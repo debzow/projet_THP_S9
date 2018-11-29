@@ -1,14 +1,17 @@
-<div class="bgcol">
 <div class="container">
         <div class="login-form">
+          <%= devise_error_messages! %>
           <div class="main-div">
              <div class="panel">
+
                  <h2>Se créer un compte</h2>
                  <p>Veuillez entrer un email et un mot de passe</p>
              </div>
 
              <%= form_for(resource, as: resource_name,id:"Login", url: registration_path(resource_name)) do |f| %>
-             <%= devise_error_messages! %>
+             
+              
+             
 
 
               <div class="form-group">
@@ -38,4 +41,3 @@
         <p class="botto-text"> Designed by Love </p>
       </div>
   </div>
-</div>
