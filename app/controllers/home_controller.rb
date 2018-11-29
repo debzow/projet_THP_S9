@@ -7,4 +7,6 @@ class HomeController < ApplicationController
   def show
   	@item_id = Item.find(params[:id])
   end
+
+  
 end
