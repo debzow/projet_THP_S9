@@ -28,8 +28,10 @@ class ChargesController < ApplicationController
 				end
 			end
 
-			#Send Email
-			#ContactMailer.order(@order, current_user.email).deliver_now
+			#Send Email to User
+			ContactMailer.order(@order, current_user.email).deliver_now
+			#Send Email to Admin (ddaviger9@yahoo.fr)
+			ContactMailer.order(@order, 'ddaviger9@yahoo.fr').deliver_now
 
 	    else
 	      redirect_to root_path
