@@ -4,8 +4,21 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+		if user_signed_in?
+	      @cart = current_user.cart
+	      @cart_items = @cart.items
+
+	      @cart_value = 0
+
+	      @cart_items.each do |item|
+	        @cart_value += item.price
+	      end
+	    else
+	      redirect_to root_path
+	    end
+
   		# Amount in cents
-	  	@amount = 500
+	  	@amount = @cart_value * 100
 
 	 	 customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
@@ -14,9 +27,9 @@ class ChargesController < ApplicationController
 
 	  	charge = Stripe::Charge.create(
 	    :customer    => customer.id,
-	    :amount      => @amount,
-	    :description => 'Cats pictures',
-	    :currency    => 'usd'
+	    :amount      => @amount.to_i,
+	    :description => 'Downloading files',
+	    :currency    => 'eur'
 	  	)
 
 		rescue Stripe::CardError => e

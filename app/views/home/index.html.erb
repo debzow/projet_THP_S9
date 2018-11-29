@@ -39,16 +39,19 @@
                   </li>
                   <li>
                     <% if user_signed_in? %>
-                      <%= link_to 'Mon profil', new_user_registration_path, class: "profile" %>
+                      <%= link_to 'Mon profil', profile_path, class: "profile" %>
                     <% end %>
                   </li>
                 </ul>
                 
                 <ul class="nav navbar-nav navbar-right">
                   <li>
-                    <a href="#">
-                      <%= image_tag('bag.png', alt: "bag") %>
-                    <span>2</span></a>
+                    <!-- Display cart image and items number in cart (only if user signed_in) -->
+                    <% if user_signed_in? %>
+                      <a href="<%= carts_show_path %>" >
+                        <%= image_tag('bag.png', alt: "bag") %>
+                      <span id="cart_items_number"> <%= current_user.cart.items.count %> </span></a>
+                    <% end %>
                   </li>
                 </ul>
               </div>
