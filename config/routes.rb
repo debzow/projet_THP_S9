@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'order/show'
   #Carts routes
   get 'carts/show', to:'carts#show'
   post 'carts/create', to:'carts#create'

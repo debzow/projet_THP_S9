@@ -4,15 +4,17 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+
 		if user_signed_in?
 	      @cart = current_user.cart
 	      @cart_items = @cart.items
-
 	      @cart_value = 0
 
 	      @cart_items.each do |item|
 	        @cart_value += item.price
 	      end
+	      puts "LOOK HEREEEEE"
+	      puts @cart
 	    else
 	      redirect_to root_path
 	    end
@@ -35,6 +37,9 @@ class ChargesController < ApplicationController
 		rescue Stripe::CardError => e
 	 	flash[:error] = e.message
 	  	redirect_to :root
-		end
 
+	  	if Order.find_by(current_user.id)
+	  		Cart.destroy
+	  	end
+	end
 end
