@@ -4,21 +4,39 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+
 		if user_signed_in?
-	      @cart = current_user.cart
-	      @cart_items = @cart.items
+      @cart = current_user.cart
+			@cart_items = @cart.items
 
-	      @cart_value = 0
+			#Creation of the order
+			@order = Order.create(user_id: current_user.id)
+			@cart_items.each do |item| 
+				@order.items << item
+			end
+			
+			#order value
+			@order_value = 0
+			@order.items.each do |item|
+				@order_value += item.price
+      end
 
-	      @cart_items.each do |item|
-	        @cart_value += item.price
-	      end
+			#re-initialize cart
+			@cart_items.each do |item|
+				if item.carts.find(@cart.id)
+					item.carts.delete(@cart)
+				end
+			end
+
+			#Send Email
+			#ContactMailer.order(@order, current_user.email).deliver_now
+
 	    else
 	      redirect_to root_path
 	    end
 
   		# Amount in cents
-	  	@amount = @cart_value * 100
+	  	@amount = @order_value * 100
 
 	 	 customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
@@ -35,6 +53,9 @@ class ChargesController < ApplicationController
 		rescue Stripe::CardError => e
 	 	flash[:error] = e.message
 	  	redirect_to :root
-		end
 
+	  	if Order.find_by(current_user.id)
+	  		Cart.destroy
+	  	end
+	end
 end
