@@ -20,13 +20,13 @@ i = 1
 end
 
 # User Admin
-# 1.times do
-#     User.create(email: "team_thp_mtp@admin.fr", password: 'topsecret', password_confirmation: 'topsecret', admin: true)
-# end
+1.times do
+    User.create(email: "team_thp_mtp@admin.fr", password: 'topsecret', password_confirmation: 'topsecret', admin: true)
+end
 
 5.times do
     #Creation of a user with the password 'topsecret'
-    User.create(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret', admin: true)
+    User.create(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret', admin: false)
 
     #creation of a cart related to the user
     # cart = Cart.create(user_id: user.id)
