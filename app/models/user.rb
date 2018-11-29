@@ -8,4 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable      
   #un user peux passer plusieurs commandes.
   has_many :orders
+
+  #create a cart associate to the new user
+  after_create do
+    Cart.create(user_id: self.id)
+  end
 end
