@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  validates :admin, presence: true
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one :cart
 

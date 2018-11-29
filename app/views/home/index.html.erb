@@ -25,7 +25,8 @@
                 <%= link_to 'Dashboard admin', admin_path %><span>•</span>
               <% end %> <br>
               <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
-              <%= current_user.email %>
+              <%= current_user.email %><br>
+              <%= link_to 'Mon Profil', profile_path%> 
             <% else %>
               <%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
             <% end %>
