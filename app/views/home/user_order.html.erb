@@ -1,0 +1,47 @@
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading"> Voici le détail de votre commande N° <%= @order.id %></h1>
+         </div>
+    </section>
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">N° de Produit</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Nom du produit</th>
+                                <th scope="col">Description</th>
+                                <th scope="col" class="text-center">Quantity</th>
+                                <th scope="col" class="text-right">Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @order.items.each do |item| %>
+                              <tr>
+                                  <td><%= item.id %></td>
+                                  <td><%= image_tag(item.image, class: "img-responsive", alt: "") %></td>
+                                  <td><%= item.title %></td>
+                                  <td><%= item.description %></td>
+                                  <td><input class="form-control" type="text" value="1" /></td>
+                                  <td class="text-right"><%= item.price %></td>
+                              </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col mb-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 text-right">
+                      <%= link_to 'Retour au profil', profile_path, class: 'btn btn-lg btn-block btn-success text-uppercase' %> 
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>

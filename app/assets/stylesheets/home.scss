@@ -1,3 +1,24 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-connected {
+	margin-top: 10px;
+	margin-left: 5%;
+	float: left;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.81);
+}
+
+.profile {
+	margin-top: 14px;
+}
+
+.promo__fish {
+    background-color: rgba(20, 20, 19, 0.5);
+    padding: 20px;   
+}
+
+.promo{
+    margin: 30px;
+    padding: 30px;
+    background-color: rgba(227, 225, 213, 0.4);
+    color: whitesmoke !important;
+}

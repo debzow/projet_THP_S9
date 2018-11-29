@@ -1,4 +1,23 @@
-<h2> Thanks for your purchase!</h2>
-<h3>Your cat picture is send!</h3>
-<%= image_tag "thanks.gif" %><br>
-<%= link_to "Buy more pictures!", :root %>
+<div class="bgcol">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading"> Thanks for your purchase !</h1>
+        <h2> User informations : <%= current_user.email %> </h2>
+     </div>
+  </section>
+
+  <br><br>
+
+  <div id="displayThks">
+	  <div class="container" id="displayConfirm">
+	    <div id="imgThks"><p><%= image_tag "thanks.gif" %></p></div>
+	    <div><h3 class="text-center" id="textJustify"><strong>Your files have been sent !</strong></h3></div>
+	    <br><br>
+    <div><%= link_to 'Acheter plus d images !', root_path, class:"btn btn-link", id:"btnBack"%></div>
+    <br>
+    <div><%= link_to 'Details de votre commande !', orders_show_path(@order.id) , class:"btn btn-link", id:"btnBack"%></div>
+	  </div>
+  </div>
+
+</div>

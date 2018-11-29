@@ -1,0 +1,28 @@
+	<div class="bgcol">
+		<div class="user-greeting">
+			<h2>Bonjour <%= current_user.email %></h2>
+		</div>
+		<div class="orders-list">
+			<h4>Voici l'historique de vos commandes:</h4>
+			<br>
+			<% @orders.each do |order| %>
+			<p><strong>Commande n° : </strong><%= order.id %></p>
+			<br>
+			<p><strong>Commandé le : </strong><%= order.created_at %></p>
+			<div class="btn btn-primary">
+			<%= link_to 'Voire le contenu de la comande', order_path(order.id), class: 'order-link' %> 
+			</div>
+      <br>
+      <% end %>
+		</div>
+		<br>
+		<br>
+		<div class="edit-profile">
+			<div class="myButton">
+				<%= link_to 'Editer mon Compte', edit_user_registration_path, class: 'btn-edit-profile' %> 
+			</div>
+			<div class="myButton">
+				<%= link_to 'Page principale', root_path, class: 'btn-edit-profile' %> 
+			</div>
+		</div>
+	</div>
