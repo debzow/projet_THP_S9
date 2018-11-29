@@ -1,66 +1,3 @@
-<body>
-  <div id="wrapper" class="homepage-1"> <!-- wrapper -->
-<!--------------------------------- NAVBAR -------------------------------->
-    <nav> 
-      <div class="top"> <!--------------- top ---------------->
-        <div class="user-connected">
-          <% if user_signed_in? %>
-            <%= current_user.email %>
-          <% end %>
-        </div>
-        <div class="top-control">
-          <% if user_signed_in? %>
-            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
-          <% else %>
-            <%= link_to 'Se créer un compte', new_user_registration_path %><span>•••</span><%= link_to 'Se connecter', new_user_session_path %>
-          <% end %>
-        </div>
-        <div class="clearfix">
-          <!-- purple nav-bar -->
-        </div>
-      </div><!------------------ top -------------------->
-
-      <div id="believe-nav"> <!------ white nav-bar ------->
-        <div class="container">
-          <div class="min-marg">
-            <nav class="navbar navbar-default">
-              <div class="navbar-header">
-                <a class="navbar-brand">
-                  <%= image_tag('logofish1.png', class: "fishlogo", alt: "") %>
-                </a>
-              </div>
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="active">
-                      <%= link_to 'Acceuil', root_path, class: "acceuil" %>
-                  </li>
-                  <li class="active">
-                      <%= link_to 'Le pire enemie du poisson...', "http://pussycat-shop-bg.herokuapp.com/", class: "acceuil", :target => "_blank" %>
-                  </li>
-                  <li>
-                    <% if user_signed_in? %>
-                      <%= link_to 'Mon profil', profile_path, class: "profile" %>
-                    <% end %>
-                  </li>
-                </ul>
-                
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <!-- Display cart image and items number in cart (only if user signed_in) -->
-                    <% if user_signed_in? %>
-                      <a href="<%= carts_show_path %>" >
-                        <%= image_tag('bag.png', alt: "bag") %>
-                      <span id="cart_items_number"> <%= current_user.cart.items.count %> </span></a>
-                    <% end %>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div> <!-------------- end white nav-bar ------------->
-    </nav> 
-<!--------------------------------- END NAVBAR ------------------------------------->
 <!--------------------------------- Slider ----------------------------------------->
     <div id="main-slider"> 
               <div id="home-slider" class="owl-carousel owl-theme">
@@ -70,17 +7,17 @@
                           <div class="container">
                               <div class="row">
                                   <div class="col-md-6">
-                                      <div class="slide-offers-left">
-                                          <div class="slide-offers-title"><span>Men’s</span><br/>FASHION</div>
-                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                                          <a href="" class="btn btn-blue">Shop now</a>
+                                      <div class="slide-offers-left promo__fish">
+                                          <div class="slide-offers-title"><span>POISSON</span><br/>FISHION</div>
+                                          <p>New & Fresh collection<br/>From CAAAARAIBE !!</p>
+                                          <a class="btn btn-blue">Adopt now</a>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
-                                       <div class="slide-offers-right">
-                                          <div class="slide-offers-title"><span>Women’s</span><br/>FASHION</div>
-                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                                          <a href="" class="btn btn-magenta">Shop now</a>
+                                       <div class="slide-offers-right promo__fish">
+                                          <div class="slide-offers-title"><span>BALEINE</span><br/>FISHION</div>
+                                          <p>Classical & Vintage collection<br/>Vivre avec une Baleine</p>
+                                          <a class="btn btn-magenta">Adopt now</a>
                                       </div>
                                   </div>
                               </div>
@@ -93,10 +30,10 @@
                           <div class="container">
                               <div class="row">
                                   <div class="col-md-6">
-                                      <div class="slide-offers-left">
-                                          <div class="slide-offers-title"><span>50% Price cut</span><br/>for online order</div>
-                                            <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                                            <a href="" class="btn btn-blue">Shop now</a>
+                                      <div class="slide-offers-left promo__fish">
+                                          <div class="slide-offers-title"><span>50% Reduction</span><br/>sur les poissons pannés</div>
+                                            <p>Fish & Chips collection<br/>On vous attend dans nos magazins</p>
+                                            <a class="btn btn-blue">Adopt now</a>
                                           </div>
                                       </div>
                                   </div>
@@ -139,7 +76,7 @@
                               <a href=""></a>
                             </div>
                             <span class="bag" style=' margin-left: 40px';></span>
-                              <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
+                              <%=link_to 'Add To car',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
                           </div>
                         </div>
                       </div>
@@ -160,25 +97,12 @@
     </div> <!-------------- end newest ------------->
     <div class="content-offers">
       <div class="container">
-        <div class="ct-offers">
-          <div class="ct-offers-title">Tommy Hilfiger<br/>Women’s</div>
-            <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour</p>
-            <a href="" class="btn btn-blue">Discover more Product</a>
+        <div class="ct-offers promo">
+          <div class="ct-offers-title">Super Promo <br> NOEL</div>
+            <p>Offrez la plus belle des expériences a vos enfants pour les fêtes.</p>
+            <a class="btn btn-blue">Adopt a shark NOW!</a>
           </div>
         </div>
       </div>
     </div> <!-------------- Content offers ------->
-
-<!------------------------ Footer -------------------------->
-    <div id="footer">
-      <div class="footer-widget">
-        <div class="footer-text">
-          <div class="container">
-            <p>Designed and Developed by <a href="">Montprellier Team </a> from The Hacking Project</p>
-          </div>
-        </div>
-      </div>
-    </div>
-<!------------- End-Footer ----------------->
-  </div> <!-- end-wrapper -->
-</body>
+</div> <!-- end-wrapper -->

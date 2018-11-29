@@ -1190,7 +1190,8 @@ blockquote{
     font-size:44px;
     font-weight:700;
     line-height: normal;
-    color:#1f1e38 ;
+    color:whitesmoke ;
+    text-shadow: 2px 2px 2px red;
     text-transform: uppercase;
 }
 
