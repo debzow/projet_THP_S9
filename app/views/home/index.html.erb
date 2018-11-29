@@ -50,15 +50,18 @@
                       <%= image_tag('srch.png', alt: "srch") %>
                     </a>
                   </li>
-                  <li>
+                  <li>                  
                     <a href="#">
                       <%= image_tag('pav.png', alt: "pav") %>
                     <span>2</span></a>
                   </li>
                   <li>
-                    <a href="#">
-                      <%= image_tag('bag.png', alt: "bag") %>
-                    <span>2</span></a>
+                    <!-- Display cart image and items number in cart (only if user signed_in) -->
+                    <% if user_signed_in? %>
+                      <a href="<%= carts_show_path %>" >
+                        <%= image_tag('bag.png', alt: "bag") %>
+                      <span id="cart_items_number"> <%= current_user.cart.items.count %> </span></a>
+                    <% end %>
                   </li>
                   <li id="open-srch-form-mod">
                     <div>
@@ -218,6 +221,13 @@
                                                   <a href=""></a>
                                                   <a href=""></a>
                                                   <a href=""></a>
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                  <span class="bag" style=' margin-left: 40px';></span>
+                                                    <%=link_to 'Add To car',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
+                                                </div>
+
                                               </div>
                                               <span class="bag" style=' margin-left: 40px';></span>
                                                     <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>

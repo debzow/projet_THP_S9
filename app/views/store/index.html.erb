@@ -1,28 +1,51 @@
-<div class="container">
+<div class="bgcol">
 
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">PAYMENT</h1>
+        <h2>User informations : <%= current_user.email %> </h2>
+     </div>
+  </section>
 
-	<div class="product">
-		<h2>Cat photo n°1 for 5€</h2>
-		<h3>Lets'go !!!</h3>
-		<div class="sticker">
-			<%= image_tag("image.png", alt: "IMAGE") %>
-		</div>
-	</div>
+  <br><br>
 
-	<%= form_tag charges_path, class: "payment-form" do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-label="Buy Now"
-          data-locale="auto"></script>
-  <% end %>
+  <div class="container" id="displayBank">
+    <div class="col-md-4">
+        <div class="panel panel-info" id="displayPay">
+            <div class="panel-heading">
+                <h4 class="text-center">Details of the payment</h4>
+            </div>
+            <div class="panel-body text-center">
+                <p class="lead">
+                    <h1><strong><%= @cart_value %> €</strong></h1>
+                </p>
+            </div>
+            <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><i class="icon-ok text-danger"></i>Total products : <%= @cart_items.count %></li>
+                <li class="list-group-item"><i class="icon-ok text-danger"></i>Files sent by email</li>
+                <li class="list-group-item"><i class="icon-ok text-danger"></i>7/7 support</li>
+            </ul>
+            <div class="panel-footer" id="btnPay">
+                <%= form_tag charges_path, class: "payment-form" do %>
+                  <article>
+                    <% if flash[:error].present? %>
+                      <div id="error_explanation">
+                        <p><%= flash[:error] %></p>
+                      </div>
+                    <% end %>
+                  </article>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-description="Payer mon panier"
+                          data-amount="<%= @cart_value * 100 %>"
+                          data-label="Paiment"
+                          data-locale="auto"
+                          data-currency="eur"
+                          data-email ="<%=current_user.email%>"> Payer mon panier
+                  </script>
+                <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
