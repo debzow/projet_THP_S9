@@ -9,6 +9,7 @@
 require 'faker'
 
 Cart.destroy_all
+Order.destroy_all
 User.destroy_all
 Item.destroy_all
 
