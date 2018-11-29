@@ -1,278 +1,162 @@
 <body>
   <div id="wrapper" class="homepage-1"> <!-- wrapper -->
-    <div id="header"> <!-- header -->
-      
+<!--------------------------------- NAVBAR -------------------------------->
+    <nav> 
       <div class="top"> <!--------------- top ---------------->
-          <div class="top-control">
-            <% if user_signed_in? %>
-              <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
-              <%= current_user.email %>
-            <% else %>
-              <%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
-            <% end %>
-          </div>
-          
-          <div class="clearfix">
-          </div>
+        <div class="top-control">
+          <% if user_signed_in? %>
+            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>
+            <%= current_user.email %>
+          <% else %>
+            <%= link_to 'Se créer un compte', new_user_registration_path %><span>•</span><%= link_to 'Se connecter', new_user_session_path %>
+          <% end %>
         </div>
-      </div> <!------------------ top -------------------->
+        <div class="clearfix">
+          <!-- purple nav-bar -->
+        </div>
+      </div><!------------------ top -------------------->
 
-      <div id="believe-nav"> <!-- Nav -->
+      <div id="believe-nav"> <!------ white nav-bar ------->
         <div class="container">
           <div class="min-marg">
             <nav class="navbar navbar-default">
-                   <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="index.html">
                   <%= image_tag('logo.png', alt: "") %>
                 </a>
               </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li class="active">
-                    <a href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <%= link_to 'Acceuil', root_path %>
                   </li>
                   <li>
-                    <a href="poiscaille.html">poisscaille</a>
+                    <% if user_signed_in? %>
+                      <%= link_to 'Mon profil', new_user_registration_path %>
+                    <% end %>
                   </li>
                 </ul>
                 
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="menu-search-form">
-                    <a href="#" id="open-srch-form">
-                      <%= image_tag('srch.png', alt: "srch") %>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <%= image_tag('pav.png', alt: "pav") %>
-                    <span>2</span></a>
-                  </li>
                   <li>
                     <a href="#">
                       <%= image_tag('bag.png', alt: "bag") %>
                     <span>2</span></a>
                   </li>
-                  <li id="open-srch-form-mod">
-                    <div>
-                      <form class="side-search">
-                        <div class="input-group">
-                          <input type="text" class="form-control search-wid" placeholder="Search Here" aria-describedby="basic-addon1">
-                          <a href="" class="input-group-addon btn-side-serach" id="basic-addon1"></a>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
                 </ul>
+              </div>
             </nav>
           </div>
         </div>
-
-        <div class="srch-form">
-          <form class="side-search">
-            <div class="input-group">
-              <input type="text" class="form-control search-wid" placeholder="Search Here" aria-describedby="basic-addon2">
-              <a href="" class="input-group-addon btn-side-serach" id="basic-addon2"></a>
-            </div>
-          </form>
-        </div>
-      </div> <!-- Nav -->
-
-      <div id="cat-nav">
-        <div class="container">
-          <nav class="navbar navbar-default">
-                      <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cat-nav-mega">
-                
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-           <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="cat-nav-mega">
-              <ul class="nav navbar-nav">
-                
-                <li class="dropdown menu-large">
-                  
-                  <ul class="dropdown-menu megamenu" role="menu">
-                    <li>
-                      <div class="">
-                        <div class="mega-sub">
-                          <div class="mega-sub-title">All Clothing</div>
-                            
-                           </div>
-                           <div class="mega-sub">
-                            
-                              <div class="mega-product">
-                              <div class="mega-sub-title">Featured products</div>
-                                <div class="row">
-                                  <div class="col-md-6 prdct-grid">
-                                      <div class="product-fade">
-                                        <div class="product-fade-wrap">
-                                        
-                                          <div class="product-fade-ct">
-                                            <div class="product-fade-control">
-                                            
-                                            <div class="to-right">
-                                              
-                                              <div class="clearfix">
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    
-                                  <div class="mega-offers">
-                                    <a href="">
-                                      <%= image_tag('mega-offers.jpg', class: "img-responsive", alt: "") %>
-                                    </a>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                      </div> 
-                      </nav>
+      </div> <!-------------- end white nav-bar ------------->
+    </nav> 
+<!--------------------------------- END NAVBAR ------------------------------------->
+<!--------------------------------- Slider ----------------------------------------->
+    <div id="main-slider">
+      <div id="home-slider" class="owl-carousel owl-theme">
+        <div class="item">
+          <%= image_tag('slider-1.jpg', class: "img-responsive", alt: "slide-1") %>
+            <div class="slider-desc">
+              <div class="container">
+                <div class="row">
+                <!--   section slider a personnaliser si on veux garder.
+                  <div class="col-md-6">
+                    <div class="slide-offers-left">
+                      <div class="slide-offers-title"><span>Men’s</span><br/>FASHION</div>
+                        <p>New & Fvhresh collection<br/>arraival in believe store</p>
+                        <a href="" class="btn btn-blue">Shop now</a>
+                      </div>
                     </div>
-                  </div>      
-                </div> <!-- header -->
-
-                <div id="main-slider"> <!-- Slider -->
-                <div id="home-slider" class="owl-carousel owl-theme">
-                  <div class="item">
-                    <%= image_tag('slider-1.jpg', class: "img-responsive", alt: "slide-1") %>
-                      <div class="slider-desc">
-                          <div class="container">
-                              <div class="row">
-                              <!--   section slider a personnaliser si on veux garder.
-                                   <div class="col-md-6">
-                                      <div class="slide-offers-left">
-                                          <div class="slide-offers-title"><span>Men’s</span><br/>FASHION</div>
-                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                                          <a href="" class="btn btn-blue">Shop now</a>
-                                      </div>
-                                  </div>
-                              
-                                  <div class="col-md-6">
-                                       <div class="slide-offers-right">
-                                          <div class="slide-offers-title"><span>Women’s</span><br/>FASHION</div>
-                                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
-                                          <a href="" class="btn btn-magenta">Shop now</a>
-                                      </div>
-                                  </div>
-                                -->
-                              </div>
-                          </div>
+                    <div class="col-md-6">
+                      <div class="slide-offers-right">
+                        <div class="slide-offers-title"><span>Women’s</span><br/>FASHION</div>
+                          <p>New & Fvhresh collection<br/>arraival in believe store</p>
+                          <a href="" class="btn btn-magenta">Shop now</a>
+                        </div>
                       </div>
-                  </div>
-                  <div class="item">
-                    <%= image_tag('slider-2.jpg', class: "img-responsive", alt: "slide-2") %>
-                  </div>
+                    </div>
+                  </div> -->
+                </div>
               </div>
-          </div> <!-- Slider -->
-                       
-              <div class="newest">
-                  <div class="container">
-                      <div class="newest-content">
-                          <div class="newest-tab">
-                          <!--PARTIE MENU DE NAVIGATION A AFFICHER QUE POUR LES LOGINED ???-->
-                              <ul id="myTab" class="nav nav-tabs newest" role="tablist">
-                                  <li role="presentation" class="active">
-                                      <a href="#1" id="cat-1" role="tab" data-toggle="tab" aria-controls="1" aria-expanded="true">bouton</a>
-                                  </li>
-                                  <li role="presentation">
-                                      <a href="#2" role="tab" id="cat-2" data-toggle="tab" aria-controls="2">bouton</a>
-                                  </li>
-                                  <li role="presentation">
-                                      <a href="#3" role="tab" id="cat-3" data-toggle="tab" aria-controls="3">bouton</a>
-                                  </li>
-                              </ul>
-                            <!--/////////////////////////////////////////////////////////-->
-                              <div id="myTabContent" class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
-                                  <div class="row clearfix">
-                                    <% @items.each do |element| %>
-                                      <div class="col-md-3 prdct-grid">
-                                        <div class="product-fade">
-                                          <div class="product-fade-wrap">
-                                              <div id="product-image">
-                                                  <div class="item">
-                                                    <%= image_tag(element.image, class: "img-responsive", id: element.id, alt: "") %>
-                                                  </div>
-                                              </div>
-                                            <div class="product-fade-ct">
-                                              <div class="product-fade-control">
-                                                <div class="to-left">
-                                                  <a href=""></a>
-                                                  <a href=""></a>
-                                                  <a href=""></a>
-                                              </div>
-                                              <span class="bag" style=' margin-left: 40px';></span>
-                                                    <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                          <div class="product-name">
-                                            <%= link_to element.title, home_path(element.id)  %>
-                                          </div>
-                                          <div class="product-price">
-                                            <span><%= element.price %></span><%= element.price %>
-                                          </div>
-                                      </div>
-                                     <% end %>
-                                  </div>
-
-                              
-                              </div>
+            </div>
+        </div>
+        <div class="item">
+          <%= image_tag('slider-2.jpg', class: "img-responsive", alt: "slide-2") %>
+        </div>
+      </div>
+    </div>
+<!--------------------------------- End-Slider ----------------------------------------->
+    <div class="newest">
+      <div class="container">
+        <div class="newest-content">
+          <div class="newest-tab">
+      <!--PARTIE MENU DE NAVIGATION A AFFICHER QUE POUR LES LOGINED ???-->
+            <ul id="myTab" class="nav nav-tabs newest" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#1" id="cat-1" role="tab" data-toggle="tab" aria-controls="1" aria-expanded="true">Nos poissons</a>
+              </li>
+            </ul>
+      <!--/////////////////////////////////////////////////////////-->
+          <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
+              <div class="row clearfix">
+                <% @items.each do |element| %>
+                  <div class="col-md-3 prdct-grid">
+                    <div class="product-fade">
+                      <div class="product-fade-wrap">
+                        <div id="product-image">
+                          <div class="item">
+                            <%= image_tag(element.image, class: "img-responsive", id: element.id, alt: "") %>
+                          </div>
+                        </div>
+                        <div class="product-fade-ct">
+                          <div class="product-fade-control">
+                            <div class="to-left">
+                              <a href=""></a>
+                              <a href=""></a>
+                              <a href=""></a>
                             </div>
+                            <span class="bag" style=' margin-left: 40px';></span>
+                              <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
                           </div>
                         </div>
                       </div>
-                      <div class="content-offers">
-                        <div class="container">
-                          <div class="ct-offers">
-                            <div class="ct-offers-title">Tommy Hilfiger<br/>Women’s</div>
-                          <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour</p>
-                          <a href="" class="btn btn-blue">Discover more Product</a>
-                        </div>
-                      </div>
+                    </div>
+                    <div class="product-name">
+                      <%= link_to element.title, home_path(element.id)  %>
+                    </div>
+                    <div class="product-price">
+                      <span>25</span> - <%= element.price %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
-              
-              
-              
-              
-              
-          </div> <!-- Content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-------------- end newest ------------->
+    <div class="content-offers">
+      <div class="container">
+        <div class="ct-offers">
+          <div class="ct-offers-title">Tommy Hilfiger<br/>Women’s</div>
+            <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour</p>
+            <a href="" class="btn btn-blue">Discover more Product</a>
+          </div>
+        </div>
+      </div>
+    </div> <!-------------- Content offers ------->
 
-          <!------------------------ Footer -------------------------->
-          
-          <div id="footer">
-              <div class="footer-widget">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-md-3">
-                              
-
-                              
-                        <div class="footer-text">
-                          <div class="container">
-                            <p>Designed and Developed by <a href="">Montprellier Team </a> from The Hacking Project
-                            </p>
-                          </div>
-                        </div>
-                      </div><!-- Footer -->
-                    </div> <!-- wrapper -->
+<!------------------------ Footer -------------------------->
+    <div id="footer">
+      <div class="footer-widget">
+        <div class="footer-text">
+          <div class="container">
+            <p>Designed and Developed by <a href="">Montprellier Team </a> from The Hacking Project</p>
+         </div>
+        </div>
+      </div>
+    </div>
+<!------------- End-Footer ----------------->
+  </div> <!-- end-wrapper -->
 </body>
