@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/admin', to:'home#admin'
   get 'order/show'
   #Carts routes
   get 'carts/show', to:'carts#show'
