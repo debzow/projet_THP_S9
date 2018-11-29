@@ -139,7 +139,7 @@
                               <a href=""></a>
                             </div>
                             <span class="bag" style=' margin-left: 40px';></span>
-                              <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
+                              <%=link_to 'Add To car',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
                           </div>
                         </div>
                       </div>

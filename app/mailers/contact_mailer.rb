@@ -6,7 +6,6 @@ class ContactMailer < ApplicationMailer
     end
     def order(ordered, email)
         @order = ordered 
-        @email = email
-        mail(to: @email, subject:'votre commande')
+        mail(to: email, subject:'votre commande')
     end
 end
