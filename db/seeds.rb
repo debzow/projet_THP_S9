@@ -20,17 +20,22 @@ i = 1
     i += 1
 end
 
-#Création de 5 users ayant pour mot de passe 'topsecret' et de leur panier correspondant contenant tous les items
+
 5.times do 
+    #Creation of a user with the password 'topsecret'
     user = User.create(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
-    cart = Cart.create(user_id: user.id)
-    order = Order.create(user_id: user.id)
-    i = Item.first.id
-    Item.count.times do
-        cart.items << Item.find(i)
-        order.items << Item.find(i)
-        i += 1
-    end
+
+    #creation of a cart related to the user
+    # cart = Cart.create(user_id: user.id)
+    #creation of a order related to the user
+    # order = Order.create(user_id: user.id)
+    #Load of the cart and the order with items
+    # i = Item.first.id
+    # Item.count.times do
+    #     cart.items << Item.find(i)
+    #     order.items << Item.find(i)
+    #     i += 1
+    # end
 
 
 end

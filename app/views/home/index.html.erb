@@ -79,15 +79,18 @@
                       <%= image_tag('srch.png', alt: "srch") %>
                     </a>
                   </li>
-                  <li>
+                  <li>                  
                     <a href="#">
                       <%= image_tag('pav.png', alt: "pav") %>
                     <span>2</span></a>
                   </li>
                   <li>
-                    <a href="#">
-                      <%= image_tag('bag.png', alt: "bag") %>
-                    <span>2</span></a>
+                    <!-- Display cart image and items number in cart (only if user signed_in) -->
+                    <% if user_signed_in? %>
+                      <a href="<%= carts_show_path %>" >
+                        <%= image_tag('bag.png', alt: "bag") %>
+                      <span id="cart_items_number"> <%= current_user.cart.items.count %> </span></a>
+                    <% end %>
                   </li>
                   <li id="open-srch-form-mod">
                     <div>
@@ -470,7 +473,7 @@
                                                 </div>
                                                 <div class="clearfix"></div>
                                                   <span class="bag" style=' margin-left: 40px';></span>
-                                                    <%=link_to 'Add To car',root_path, class:"btn btn-to-cart", remote: true %>
+                                                    <%=link_to 'Add To car',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
                                                 </div>
                                               </div>
                                             </div>
@@ -617,89 +620,8 @@
                                   
                                   <div class="clearfix"></div>
                               </div>
-                              <div class="col-md-2">
-                                <div class="quick-links">
-                                  <div class="wid-title">
-                                  Quick Links
-                                  </div>
-                                  <ul>
-                                    <li>
-                                      <a href="index.html">Home</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">About US</a>
-                                    </li>
-                                    <li>
-                                      <a href="contact.html">contact US</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">deals</a>
-                                    </li>
-                                    <li>
-                                      <a href="blog.html">blog</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">help</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-md-2">
-                                <div class="term">
-                                  <div class="wid-title">&nbsp;</div>
-                                    <p>
-                                      <a href="#">Tearms & condition</a><br/>
-                                      <a href="#">FAQs</a><br/>
-                                      <a href="#">Privacy Policy</a><br/>
-                                      <a href="#">Legal Desclaimer</a><br/>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="col-md-2">
-                                  <div class="quick-links">
-                                    <div class="wid-title">
-                                    My Account
-                                    </div>
-                                  <ul>
-                                    <li>
-                                      <a href="#">My Account</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">Personal Information</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">Addresses</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">Orders</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">Wishlist</a>
-                                    </li>
-                                    <li>
-                                      <a href="#">track order</a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-md-3">
-                                <div class="subscribe">
-                                  <div class="wid-title">
-                                  Subscribe for OFFERS & UPDATES
-                                  </div>
-                                  <p>Enter your email and we'll send you a coupon with 10% off your next order. Add any text here
-                                  </p>
-                                  <form>
-                                    <div class="form-group">
-                                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Subscribe Now</button>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+
+                              
                         <div class="footer-text">
                           <div class="container">
                             <p>Copyright 2018 All Rights Reserved by Believe. Designed and Developed by <a href="https://bootstrapmart.com/">BootstrapMart </a>
