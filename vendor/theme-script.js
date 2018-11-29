@@ -33,21 +33,21 @@ jQuery(document).ready(function($) {
     
     /*------------------------------- Price range slider ---------------------------------------*/
     
-    $(function(){
-        $(function() {
-            $( "#range-slider" ).slider({
-                range: true,
-                min: 0,
-                max: 500,
-                values: [ 0, 85, ],
-                slide: function( event, ui ) {
-                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-                }
-            });
-            $( "#amount" ).val( "$" + $( "#range-slider" ).slider( "values", 0 ) +
-		  " - $" + $( "#range-slider" ).slider( "values", 1 ) );
-        });
-    });
+    // $(function(){
+    //     $(function() {
+    //         $( "#range-slider" ).slider({
+    //             range: true,
+    //             min: 0,
+    //             max: 500,
+    //             values: [ 0, 85, ],
+    //             slide: function( event, ui ) {
+    //                 $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    //             }
+    //         });
+    //         $( "#amount" ).val( "$" + $( "#range-slider" ).slider( "values", 0 ) +
+		  // " - $" + $( "#range-slider" ).slider( "values", 1 ) );
+    //     });
+    // });
     
     /*------------------------------- Home Slider ---------------------------------------*/
     $(function(){
