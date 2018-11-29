@@ -56,10 +56,11 @@ blockquote{
     overflow:hidden;
 }
 .container{
+
     max-width:1170px;
     margin:0 70 0 70;
     position:relative;
-    
+
 }
 #header{
     
@@ -192,6 +193,7 @@ blockquote{
     -webkit-transition: all .3s ease;
 }
 #believe-nav{
+    margin-top: 60px;
     padding:15px 0;
 }
 .homepage-2 #believe-nav{
