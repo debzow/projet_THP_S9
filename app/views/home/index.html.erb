@@ -21,7 +21,7 @@
           <div class="top-control">
             
             <% if user_signed_in? %>
-              <% if @admin %>
+              <% if current_user.admin? %>
                 <%= link_to 'Dashboard admin', admin_path %><span>•</span>
               <% end %> <br>
               <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> <br>

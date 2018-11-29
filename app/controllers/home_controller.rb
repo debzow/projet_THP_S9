@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   	@admin = User.find_by(admin: true)
   	puts "look hereeeeeeeeeeee"
   	puts @admin
+  	puts "PARAMS : #{params}" 
 
   end
 
@@ -14,7 +15,7 @@ class HomeController < ApplicationController
 
 
   def admin
-
+  	@all_users = User.all
   end
 
   def profile
