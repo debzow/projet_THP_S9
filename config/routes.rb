@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #User_Profile routes
   get '/profile', to: 'home#profile'
   #User_Orders routes
-  get '/orders', to: 'home#user_orders'
+  get '/order/:order_id', to: 'home#user_order', as: 'order'
   #Stripe routes
   get'/store', to:'store#index'
   devise_for :users

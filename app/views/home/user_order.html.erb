@@ -76,7 +76,7 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Voici le détail de votre commande</h1>
+            <h1 class="jumbotron-heading"> Voici le détail de votre commande N° <%= @order.id %></h1>
          </div>
     </section>
 
@@ -96,18 +96,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <% @orders.each do |order| %>
-                            <% order.items.each do |item| %>
-                            <tr>
-                                <td><%= item.id %></td>
-                                <td><%= image_tag(item.image, class: "img-responsive", alt: "") %></td>
-                                <td><%= item.title %></td>
-                                <td><%= item.description %></td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right"><%= item.price %></td>
-                            </tr>
+                            <% @order.items.each do |item| %>
+                              <tr>
+                                  <td><%= item.id %></td>
+                                  <td><%= image_tag(item.image, class: "img-responsive", alt: "") %></td>
+                                  <td><%= item.title %></td>
+                                  <td><%= item.description %></td>
+                                  <td><input class="form-control" type="text" value="1" /></td>
+                                  <td class="text-right"><%= item.price %></td>
+                              </tr>
                             <% end %>
-                          <% end %>
                         </tbody>
                     </table>
                 </div>
@@ -118,6 +116,8 @@
                       <%= link_to 'Retour au profil', profile_path, class: 'btn btn-lg btn-block btn-success text-uppercase' %> 
                     </div>
                 </div>
+                <br>
+                <br>
             </div>
         </div>
     </div>

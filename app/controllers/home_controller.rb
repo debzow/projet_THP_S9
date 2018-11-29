@@ -11,8 +11,8 @@ class HomeController < ApplicationController
   	@orders = current_user.orders
   end
 
-  def user_orders
-  	@orders = current_user.orders
+  def user_order
+    @order = Order.find(params[:order_id])
   end
 
 end

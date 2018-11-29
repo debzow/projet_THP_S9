@@ -86,11 +86,11 @@
 			<br>
 			<p><strong>Commandé le : </strong><%= order.created_at %></p>
 			<div class="btn btn-primary">
-			<%= link_to 'Voire le contenu de la comande', orders_path, class: 'order-link' %> 
+			<%= link_to 'Voire le contenu de la comande', order_path(order.id), class: 'order-link' %> 
 			</div>
-			<br>
+      <br>
+      <% end %>
 		</div>
-		<% end %>
 		<br>
 		<br>
 		<div class="edit-profile">
