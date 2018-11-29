@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'order/show'
+  get 'orders/show/:order_id', to:'order#show', as: 'orders_show'
+  get 'orders/new', to:'order#new'
   #Carts routes
   get 'carts/show', to:'carts#show'
+ 
   post 'carts/create', to:'carts#create'
   post 'carts/add_item/:item_id', to:'carts#add_item', as: 'carts_add_item'
   post 'carts/remove_item', to:'carts#remove_item'

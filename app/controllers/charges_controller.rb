@@ -6,21 +6,37 @@ class ChargesController < ApplicationController
 	def create
 
 		if user_signed_in?
-	      @cart = current_user.cart
-	      @cart_items = @cart.items
-	      @cart_value = 0
+      @cart = current_user.cart
+			@cart_items = @cart.items
 
-	      @cart_items.each do |item|
-	        @cart_value += item.price
-	      end
-	      puts "LOOK HEREEEEE"
-	      puts @cart
+			#Creation of the order
+			@order = Order.create(user_id: current_user.id)
+			@cart_items.each do |item| 
+				@order.items << item
+			end
+			
+			#order value
+			@order_value = 0
+			@order.items.each do |item|
+				@order_value += item.price
+      end
+
+			#re-initialize cart
+			@cart_items.each do |item|
+				if item.carts.find(@cart.id)
+					item.carts.delete(@cart)
+				end
+			end
+
+			#Send Email
+			#ContactMailer.order(@order, current_user.email).deliver_now
+
 	    else
 	      redirect_to root_path
 	    end
 
   		# Amount in cents
-	  	@amount = @cart_value * 100
+	  	@amount = @order_value * 100
 
 	 	 customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
