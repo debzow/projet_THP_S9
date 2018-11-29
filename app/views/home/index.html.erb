@@ -60,34 +60,37 @@
             <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
               <div class="row clearfix">
                 <% @items.each do |element| %>
-                  <div class="col-md-3 prdct-grid">
-                    <div class="product-fade">
-                      <div class="product-fade-wrap">
-                        <div id="product-image">
-                          <div class="item">
-                            <%= image_tag(element.image, class: "img-responsive", id: element.id, alt: "") %>
-                          </div>
-                        </div>
-                        <div class="product-fade-ct">
-                          <div class="product-fade-control">
-                            <div class="to-left">
-                              <a href=""></a>
-                              <a href=""></a>
-                              <a href=""></a>
+                  <% if (@cart_items_id.include?(element.id)) %>
+                  <% else %>
+                    <div class="col-md-3 prdct-grid">
+                      <div class="product-fade">
+                        <div class="product-fade-wrap">
+                          <div id="product-image">
+                            <div class="item">
+                              <%= image_tag(element.image, class: "img-responsive", id: element.id, alt: "") %>
                             </div>
-                            <span class="bag" style=' margin-left: 40px';></span>
-                              <%=link_to 'Add To cart',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
+                          </div>
+                          <div class="product-fade-ct">
+                            <div class="product-fade-control">
+                              <div class="to-left">
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                              </div>
+                              <span class="bag" style=' margin-left: 40px';></span>
+                                <%=link_to 'Add To cart',carts_add_item_path(element.id), class:"btn btn-to-cart", remote: true, method: :post %>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <div class="product-name">
+                        <%= link_to element.title, home_path(element.id)  %>
+                      </div>
+                      <div class="product-price">
+                        <span>25</span> - <%= sprintf('%.2f', element.price.to_i) %>
+                      </div>
                     </div>
-                    <div class="product-name">
-                      <%= link_to element.title, home_path(element.id)  %>
-                    </div>
-                    <div class="product-price">
-                      <span>25</span> - <%= sprintf('%.2f', element.price.to_i) %>
-                    </div>
-                  </div>
+                  <% end %>
                 <% end %>
               </div>
             </div>

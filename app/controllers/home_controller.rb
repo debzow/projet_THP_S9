@@ -1,6 +1,13 @@
 class HomeController < ApplicationController
   def index
-  	@items = Item.all
+    @items = Item.all
+    
+    @cart_items_id = []
+    if user_signed_in?
+      current_user.cart.items.each do |item|
+        @cart_items_id << item.id
+      end
+    end
   end
 
   def show
