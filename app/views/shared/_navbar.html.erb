@@ -39,6 +39,13 @@
                       <%= link_to 'Mon profil', profile_path, class: "profile" %>
                     <% end %>
                   </li>
+                  <li>
+                    <% if user_signed_in? %>
+                      <% if current_user.admin? %>
+                        <%= link_to 'Dashboard admin', admin_path, class: "profile" %>
+                      <% end %>
+                    <% end %>
+                  </li>
                 </ul>
                 
                 <ul class="nav navbar-nav navbar-right">

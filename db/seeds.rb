@@ -15,27 +15,13 @@ Item.destroy_all
 
 
 i = 1
-	8.times do 
+	8.times do
     Item.create(title: "titre #{i}", description: "ceci est une description du produit n°#{i}", price: i, image: "p-#{i}.jpg")
     i += 1
 end
 
-
-5.times do 
-    #Creation of a user with the password 'topsecret'
-    user = User.create(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
-
-    #creation of a cart related to the user
-    # cart = Cart.create(user_id: user.id)
-    #creation of a order related to the user
-    # order = Order.create(user_id: user.id)
-    #Load of the cart and the order with items
-    # i = Item.first.id
-    # Item.count.times do
-    #     cart.items << Item.find(i)
-    #     order.items << Item.find(i)
-    #     i += 1
-    # end
-
-
+# User Admin
+1.times do
+    User.create(email: "team_thp_mtp@admin.fr", password: 'topsecret', password_confirmation: 'topsecret', admin: true)
 end
+

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  
+  get '/admin', to:'home#admin'
   root to: 'home#index'
   get 'orders/show/:order_id', to:'order#show', as: 'orders_show'
   get 'orders/new', to:'order#new'
+
   #Carts routes
   get 'carts/show', to:'carts#show'
  
