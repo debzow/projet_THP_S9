@@ -130,8 +130,9 @@ blockquote{
     text-decoration:none;
 }
 .top-control{
+    font-size: 20px;
     float:right;
-    padding:15px 0;
+    padding:15px 15px;
 }
 .homepage-2.gold .top-control{
     float:right;
@@ -190,7 +191,7 @@ blockquote{
     -webkit-transition: all .3s ease;
 }
 #believe-nav{
-    padding:30px 0;
+    padding:15px 0;
 }
 .homepage-2 #believe-nav{
     padding:15px 0 35px;
@@ -206,6 +207,17 @@ blockquote{
     padding:0 15px;
     height:auto;
 }
+
+.fishlogo {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.acceuil {
+    margin-top: 14px;
+}
+
 .homepage-2 #believe-nav .navbar-brand h1{
     padding:0 0;
     height:auto;
@@ -518,10 +530,6 @@ blockquote{
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;
-}
-
-#home-slider{
-    background: #66cef6 ;
 }
 
 #home-slider .item img{
@@ -1047,7 +1055,10 @@ blockquote{
 	transition:all .3s ease;
 	-moz-transition:all .3s ease;
 	-webkit-transition:all .3s ease;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
 }
+
 .product-fade-ct{
 	position:absolute;
 	margin:0 auto;
@@ -1148,7 +1159,9 @@ blockquote{
 .content-offers{
     min-height:490px;
     width:100%;
-    background:url(bg-offers.jpg) no-repeat left center;
+    background:url(bg-offers.jpg) no-repeat center fixed;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
     margin-bottom:100px;
     
 }
@@ -1178,7 +1191,8 @@ blockquote{
     font-size:44px;
     font-weight:700;
     line-height: normal;
-    color:#1f1e38 ;
+    color:whitesmoke ;
+    text-shadow: 2px 2px 2px red;
     text-transform: uppercase;
 }
 
@@ -4462,3 +4476,36 @@ box-shadow: 1px -3px 9px 0px rgba(0,0,0,0.65);
 #textJustify{
     font-size: bold;
 }
+
+/*flash devise*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+ .img-responsive{
+    -webkit-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
+ }

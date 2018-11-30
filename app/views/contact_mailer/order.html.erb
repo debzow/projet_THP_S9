@@ -1,2 +1,6 @@
 <h1>Vous avez commandé : </h1>
-<img src="poissontest.jpeg"/>
+<% @items.each do |item| %>
+  <p><%= item.title %><p>
+  <a href=<%= @amazonaws+item.image %>>  Téléchargez votre super image ici ! </a><br>
+<% end %>
+

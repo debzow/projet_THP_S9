@@ -28,7 +28,7 @@
                               <td><%= user.email %></td>
                               <% if Order.find_by(user_id: user.id) %>
                               	<% @order = Order.find_by(user_id: user.id) %>
-                              	<td class="text-right">Order n° : <%= @order.id %></td>
+                              	<td class="text-right">Number of orders : <%= user.orders.count %></td>
                               <% else %>
                               	<td class="text-right">No order for this user</td>
                               <% end %>

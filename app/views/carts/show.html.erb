@@ -25,7 +25,7 @@
                       <tbody>
                           <% @cart_items.each do |item| %>
                           <tr>
-                              <td><%= image_tag('p-1.jpg', class: "img-responsive", id: item.id, alt: "") %></td>
+                              <td><%= image_tag(item.image, class: "img-responsive", id: item.id, alt: "") %></td>
                               <td><%= item.title %></td>
                               <td>In stock</td>
                               <td><input class="form-control" type="text" value="1" /></td>
@@ -52,7 +52,7 @@
                       <%= link_to 'Continuer shopping', :root, class:"btn btn-link", id:"btnBack" %>
                   </div>
                   <div class="col-sm-12 col-md-6 text-right">
-                      <%= link_to 'Passer commande', order_show_path, class:"btn btn-link", id:"btnPayment" %>
+                      <%= link_to 'Passer commande', orders_new_path, class:"btn btn-link", id:"btnPayment" %>
                   </div>
                   <br><br><br>
               </div>

@@ -5,16 +5,8 @@
 	            <div class="card">
 	                <div class="card-body p-0">
 	                    <div class="row p-5">
-	                        <div class="col-md-6">
-	                            <img src="http://via.placeholder.com/400x90?text=logo">
-	                        </div>
-
-	                        <div class="col-md-6 text-right">
-	                            <p class="font-weight-bold mb-1">Id command : <%= @order.id %></p>
-	                            <p class="text-muted">Due to: 4 Dec, 2019</p>
-	                        </div>
+                        <h2> Veuillez valider votre commande </h2>
 	                    </div>
-
 	                    <hr class="my-5">
 
 	                    <div class="row pb-5 p-5">
@@ -25,7 +17,7 @@
 
 	                        <div class="col-md-6 text-right">
 	                            <p class="font-weight-bold mb-4">Payment Details</p>
-	                            <p class="mb-1"><span class="text-muted">COMMAND ID </span> <%= @order.id %></p>
+	                            <p class="mb-1"><span class="text-muted">COMMAND ID </span> <%= @cart.id %></p>
 	                            <p class="mb-1"><span class="text-muted">USER ID: </span> <%= current_user.id %></p>
 	                            <p class="mb-1"><span class="text-muted">Payment Type: </span> CB</p>
 	                            <p class="mb-1"><span class="text-muted">Locality: </span> France</p>
@@ -46,7 +38,7 @@
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                	<% @order.items.each do |item| %>
+	                                	<% @cart_items.each do |item| %>
 		                                    <tr>
 		                                        <td><%= item.id %></td>
 		                                        <td><%= item.title %></td>
@@ -64,12 +56,13 @@
 	                    <div class="d-flex flex-row-reverse bg-dark text-white p-4">
 	                        <div class="py-3 px-5 text-right">
 	                            <div class="mb-2">Grand Total</div>
-	                            <div class="h2 font-weight-light"><%= @order_value %> €</div>
+	                            <div class="h2 font-weight-light"><%= @cart_value %> €</div>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </div>
+	    <%= link_to 'Confirmer commande', store_path, class:"btn btn-link", id:"btnPayment" %>
 	</div>
 </div>
